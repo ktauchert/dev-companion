@@ -39,12 +39,13 @@ Typical homes:
 
 | Kind of outcome | Prefer |
 | --- | --- |
-| Product intent, users, problem/solution | `PROJECT-PLAN.md`, `README.md` |
-| Sequencing and phases | `ROADMAP.md` |
-| Stack choices | `TECH-STACK.md` |
-| Structure and module boundaries | `ARCHITECTURE.md`, `DOMAIN-MODULES.md`, `MONOREPO-STRUCTURE.md` |
+| Product intent, users, problem/solution | `docs/planning/project-plan.md`, `README.md` |
+| Sequencing and phases | `docs/planning/roadmap.md` |
+| Stack choices | `docs/architecture/tech-stack.md` |
+| Structure and module boundaries | `docs/architecture/overview.md`, `docs/architecture/domain-modules.md`, `docs/architecture/monorepo.md` |
 | Significant decisions | `docs/adr/` |
-| How we work | `DEVELOPMENT.md`, `CONTRIBUTING.md`, this file |
+| How we work | `docs/development.md`, `CONTRIBUTING.md`, this file |
+| Docs index | `docs/README.md` |
 
 Prefer updating an existing doc over adding a new one. Add an ADR when the choice is architectural and should stay reviewable.
 
@@ -54,17 +55,17 @@ Do not invent implementation details in docs that were not agreed. Record what w
 
 **SDLC Companion** helps solo developers and small teams take an idea through a structured lifecycle (ideation → requirements → architecture → planning → development → testing → deployment → retrospective). AI assists; it is not the system of record. Artifacts are persistent and versioned. External systems sit behind provider abstractions where that is useful.
 
-Planned shape (see `inital-rep-strucutre.md` and `MONOREPO-STRUCTURE.md`):
+Planned shape (see `docs/architecture/monorepo.md`):
 
 - apps: Next.js web, NestJS API
 - packages: domain modules plus shared, database, auth, AI, documents, validation
 - modular monolith, not microservices by default
 
-Stack (see `TECH-STACK.md`): TypeScript, Next.js, Tailwind, shadcn/ui, NestJS, PostgreSQL, Drizzle, Better Auth, npm workspaces, OpenAI first with a provider boundary.
+Stack (see `docs/architecture/tech-stack.md`): TypeScript, Next.js, Tailwind, shadcn/ui, NestJS, PostgreSQL, Drizzle, Better Auth, npm workspaces, OpenAI first with a provider boundary.
 
 Current status: architecture / foundation; implementation of the codebase is not implied by conversation alone.
 
-Read these before proposing structural change: `ARCHITECTURE.md`, `DOMAIN-MODULES.md`, `docs/adr/`.
+Read these before proposing structural change: `docs/architecture/overview.md`, `docs/architecture/domain-modules.md`, `docs/adr/`.
 
 ## Commit messages
 

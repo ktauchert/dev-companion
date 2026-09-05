@@ -26,7 +26,7 @@ Important AI-generated data entering the domain should be validated before persi
 
 ## Documentation
 
-Significant architectural decisions should be documented as ADRs.
+Significant architectural decisions should be documented as ADRs in `docs/adr/`.
 
 Discussions that produce a decision, trade-off, or working solution should be reflected in the relevant project documents in the same pass, not left only in chat. Prefer updating an existing document over adding a new one.
 

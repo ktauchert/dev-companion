@@ -1,54 +1,36 @@
 # Monorepo Structure
 
 ```text
-apps/
-├── web/
-│   └── Next.js application
-│
-└── api/
-    └── NestJS application
+README.md
+AGENTS.md
+CONTRIBUTING.md
 
+apps/
+├── web/                    # Next.js
+└── api/                    # NestJS
 
 packages/
 ├── shared/
-│   └── shared types and utilities
-│
 ├── database/
-│   └── Drizzle schema and database access
-│
 ├── auth/
-│   └── authentication abstractions
-│
 ├── ai/
-│   └── LLM abstractions and providers
-│
 ├── architecture/
-│   └── architecture domain
-│
 ├── ideation/
-│   └── ideation domain
-│
 ├── planning/
-│   └── planning domain
-│
 ├── documents/
-│   └── document and versioning domain
-│
 └── validation/
-    └── shared validation schemas
-
 
 infrastructure/
 ├── docker/
 ├── render/
 └── scripts/
 
-
 docs/
+├── README.md
+├── development.md
 ├── adr/
 ├── architecture/
 └── planning/
-
 
 .github/
 └── workflows/
