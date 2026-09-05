@@ -53,7 +53,7 @@ Do not invent implementation details in docs that were not agreed. Record what w
 
 ## Project snapshot
 
-**SDLC Companion** helps solo developers and small teams take an idea through a structured lifecycle (ideation → requirements → architecture → planning → development → testing → deployment → retrospective). AI assists; it is not the system of record. Artifacts are persistent and versioned. External systems sit behind provider abstractions where that is useful.
+**SDLC Companion** gives indie and solo developers a line to follow: a clean, documented working environment from the start, plus light acknowledgement of **consistency** (showing up, coherent style and progress) rather than output volume. The SDLC path (ideation → requirements → architecture → planning → development → testing → deployment → retrospective) is the rails. AI assists; it is not the system of record. Artifacts are persistent and versioned. External systems sit behind provider abstractions where that is useful.
 
 Planned shape (see `docs/architecture/monorepo.md`):
 

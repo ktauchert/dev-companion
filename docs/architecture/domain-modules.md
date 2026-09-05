@@ -95,6 +95,18 @@ Responsible for:
 
 ---
 
+## Progress (consistency)
+
+Responsible for:
+
+* Noticing that the user contributed, including small contributions
+* Acknowledging consistency in work, style, and progress
+* Light, encouraging feedback — not volume scores, leaderboards, or shame for missed days
+
+This is a first-class product concern, not a badge sticker on the UI. Mechanics stay undecided until designed on purpose.
+
+---
+
 ## Guideline
 
 Modules should communicate through explicit application interfaces rather than reaching directly into another module's internal implementation.

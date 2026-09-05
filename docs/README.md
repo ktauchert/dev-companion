@@ -4,7 +4,7 @@ Index of project documents. Root stays lean: `README.md`, `AGENTS.md`, `CONTRIBU
 
 ## Planning
 
-* [Project plan](planning/project-plan.md) — vision, users, problem, solution
+* [Project plan](planning/project-plan.md) — motivation, users, problem, solution
 * [Roadmap](planning/roadmap.md) — product phases
 
 ## Architecture

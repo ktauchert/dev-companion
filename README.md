@@ -1,8 +1,8 @@
 # SDLC Companion
 
-AI-assisted software engineering platform for guiding software projects from idea to production.
+A guideline and companion for indie and solo developers: a clean, documented line to follow from day one, and recognition for **consistency** — not for how much you shipped in a sitting.
 
-The platform transforms an initial idea into structured, persistent and versioned software engineering artifacts. AI assists; it does not replace the developer or become the system of record.
+The platform turns an idea into persistent, versioned engineering artifacts. AI assists. It does not replace the developer or become the system of record. Small contributions count; showing up in a coherent style is the point.
 
 ## Lifecycle
 

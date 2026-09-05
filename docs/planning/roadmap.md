@@ -15,6 +15,7 @@
 * Edit project
 * Project dashboard
 * Project status
+* First acknowledgement of contribution (consistency over volume — keep this light)
 
 ### Infrastructure
 
@@ -123,9 +124,9 @@
 
 ---
 
+The consistency loop (acknowledge showing up, compliment small contributions, never score by volume) is not a late add-on. It should be visible from the first project dashboard and deepen as the workflow grows.
+
 ## Status
 
-The roadmap represents the product vision.
-
-Features may be reordered as implementation and validation progress.
+The roadmap is sequencing, not the product thesis. The thesis is in the [project plan](project-plan.md): a line to follow, a clean start, consistency over intensity.
 
