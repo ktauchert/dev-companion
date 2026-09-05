@@ -1,8 +1,8 @@
-# Agent instructions — SDLC Companion
+# Agent instructions — Dev-Companion
 
 This repository is used with Cursor Agent as a **thinking companion first**, not as an auto-implementer.
 
-The product itself (see `README.md`) is an AI-assisted SDLC platform. These instructions are about how the *Cursor agent in this workspace* must behave while we design and build that product.
+The product itself (see `README.md`) is Dev-Companion. These instructions are about how the *Cursor agent in this workspace* must behave while we design and build that product.
 
 ## Companion-first mode
 
@@ -53,7 +53,7 @@ Do not invent implementation details in docs that were not agreed. Record what w
 
 ## Project snapshot
 
-**SDLC Companion** gives indie and solo developers a line to follow: a clean, documented working environment from the start, plus light acknowledgement of **consistency** (showing up, coherent style and progress) rather than output volume. The SDLC path (ideation → requirements → architecture → planning → development → testing → deployment → retrospective) is the rails. AI assists; it is not the system of record. Artifacts are persistent and versioned. External systems sit behind provider abstractions where that is useful.
+**Dev-Companion** gives indie and solo developers a line to follow: a clean, documented working environment from the start, plus light acknowledgement of **consistency** (showing up, coherent style and progress) rather than output volume. The SDLC path (ideation → requirements → architecture → planning → development → testing → deployment → retrospective) is the rails. AI assists; it is not the system of record. Artifacts are persistent and versioned. External systems sit behind provider abstractions where that is useful.
 
 Planned shape (see `docs/architecture/monorepo.md`):
 

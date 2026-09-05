@@ -6,7 +6,7 @@ Accepted
 
 ## Context
 
-SDLC Companion interacts with external systems such as LLM providers and authentication systems.
+Dev-Companion interacts with external systems such as LLM providers and authentication systems.
 
 Different deployment environments may require different implementations.
 

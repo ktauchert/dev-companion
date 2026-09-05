@@ -2,7 +2,7 @@
 
 ## Architectural Style
 
-SDLC Companion is implemented as a modular monolith.
+Dev-Companion is implemented as a modular monolith.
 
 The system is divided into explicit domain modules while remaining deployable as a small number of applications.
 

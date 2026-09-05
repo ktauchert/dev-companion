@@ -6,7 +6,7 @@ Most indie and solo developers do not fail from a lack of tools. They fail from 
 
 Each project becomes an improvised process: messy folders, half-written notes, architecture in someone's head, bursts of work followed by silence. The work environment is not clean from day one, so it never quite becomes clean.
 
-SDLC Companion exists to give that line. A guideline you can actually follow. Documentation and structure set up from the start, so the project stays navigable as it grows.
+Dev-Companion exists to give that line. A guideline you can actually follow. Documentation and structure set up from the start, so the project stays navigable as it grows.
 
 The second half is why people stay on that line: **consistency**.
 
@@ -16,7 +16,7 @@ The SDLC workflow (ideation → architecture → planning → delivery) is the r
 
 ## Vision
 
-SDLC Companion is a guideline and a companion for solo developers and small teams: a clean, documented working environment from the start, and recognition for showing up consistently — not for heroic output.
+Dev-Companion is a guideline and a companion for solo developers and small teams: a clean, documented working environment from the start, and recognition for showing up consistently — not for heroic output.
 
 AI assists along the path. The user stays responsible for decisions. Artifacts stay the system of record.
 

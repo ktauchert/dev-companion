@@ -1,4 +1,4 @@
-# SDLC Companion
+# Dev-Companion
 
 A guideline and companion for indie and solo developers: a clean, documented line to follow from day one, and recognition for **consistency** — not for how much you shipped in a sitting.
 
