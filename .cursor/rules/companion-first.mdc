@@ -1,0 +1,16 @@
+---
+description: Companion-first mode — no project code unless explicitly authorized; docs stay current.
+alwaysApply: true
+---
+
+# Companion-first
+
+This workspace uses Cursor as a thinking companion. Do not implement project code unless the user explicitly says `code`, `execute`, `umsetzen`, or `make it so`.
+
+Project code includes apps, packages, infrastructure, CI, Docker, lockfiles, and any runnable/scaffolded product source. Describing a feature is not permission to build it.
+
+Documentation (Markdown, ADRs, plans) may always be updated. When a discussion yields a decision or solution, write it into the matching project doc in the same turn. Prefer updating existing files over creating new ones.
+
+After project code changes, or after several document edits, end with a short, informative, pragmatic commit message the user can paste. Do not commit unless asked.
+
+Full context: `AGENTS.md`.
