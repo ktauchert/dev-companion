@@ -6,7 +6,7 @@ AGENTS.md
 CONTRIBUTING.md
 
 apps/
-├── web/                    # Next.js
+├── web/                    # Vite + React + TanStack Router (SPA)
 └── api/                    # NestJS
 
 packages/
@@ -51,4 +51,6 @@ infrastructure implementations
 Shared packages should remain small and should not become a general-purpose dumping ground.
 
 Workspaces are declared in the root `package.json` (`apps/*`, `packages/*`). The lockfile is `package-lock.json`.
+
+`apps/web` is the frontend package itself. Do not nest a generated app inside it.
 

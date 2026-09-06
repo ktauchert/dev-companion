@@ -45,6 +45,7 @@ Typical homes:
 | Structure and module boundaries | `docs/architecture/overview.md`, `docs/architecture/domain-modules.md`, `docs/architecture/monorepo.md` |
 | Significant decisions | `docs/adr/` |
 | How we work | `docs/development.md`, `CONTRIBUTING.md`, this file |
+| Implementation notes | `docs/lessons-learned/` |
 | Docs index | `docs/README.md` |
 
 Prefer updating an existing doc over adding a new one. Add an ADR when the choice is architectural and should stay reviewable.
@@ -57,11 +58,11 @@ Do not invent implementation details in docs that were not agreed. Record what w
 
 Planned shape (see `docs/architecture/monorepo.md`):
 
-- apps: Next.js web, NestJS API
+- apps: Vite + TanStack Router web (SPA), NestJS API
 - packages: domain modules plus shared, database, auth, AI, documents, validation
 - modular monolith, not microservices by default
 
-Stack (see `docs/architecture/tech-stack.md`): TypeScript, Next.js, Tailwind, shadcn/ui, NestJS, PostgreSQL, Drizzle, Better Auth, npm workspaces, OpenAI first with a provider boundary.
+Stack (see `docs/architecture/tech-stack.md`): TypeScript, Vite, React, TanStack Router, Tailwind, shadcn/ui, NestJS, PostgreSQL, Drizzle, Better Auth, npm workspaces, OpenAI first with a provider boundary.
 
 Current status: architecture / foundation; implementation of the codebase is not implied by conversation alone.
 

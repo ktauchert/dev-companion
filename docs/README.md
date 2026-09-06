@@ -19,9 +19,14 @@ Index of project documents. Root stays lean: `README.md`, `AGENTS.md`, `CONTRIBU
 
 * [ADR-001 Modular monolith](adr/ADR-001-MODULAR-MONOLITH.md)
 * [ADR-002 Provider architecture](adr/ADR-002-PROVIDER-ARCHITECTURE.md)
+* [ADR-003 Web UI: Vite + TanStack Router](adr/ADR-003-WEB-TANSTACK-ROUTER.md)
 
 ## Working here
 
 * [Development](development.md) — setup, workflow, GitHub remote
 * [Contributing](../CONTRIBUTING.md)
 * [Agent instructions](../AGENTS.md)
+
+## Lessons learned
+
+* [Phase 1 / AP 1.1 Monorepo](lessons-learned/phase-1/ap1.md)
