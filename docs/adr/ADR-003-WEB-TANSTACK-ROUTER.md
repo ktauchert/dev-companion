@@ -23,7 +23,11 @@ Next.js (App Router, RSC, Server Actions, Route Handlers) would add a second ser
 
 It talks to the NestJS API. It does not host domain logic, auth rules, or persistence.
 
-TanStack Start is not used. Next.js is not used.
+TanStack Router is only routing (URLs, params, type-safe links). It does not compile, serve, or bundle the app.
+
+**Vite** is the build tool: TypeScript/JSX, dev server, HMR, production bundle. Next.js bundled that job into the framework; without Next, something else must do it. Vite is the usual pair for TanStack Router. Webpack or Rsbuild would also work; they add no value here.
+
+TanStack Start = Router + Vite + a server layer. We take Router + Vite only.
 
 Tailwind CSS and shadcn/ui remain the UI kit.
 
