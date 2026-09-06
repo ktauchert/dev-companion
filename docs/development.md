@@ -21,6 +21,8 @@ Redis is not in the initial stack. It appeared as a template default (cache, que
 
 Additional services may be introduced when required.
 
+Compose how-to and pitfalls for AP 1.2: [lessons-learned/phase-1/ap2.md](lessons-learned/phase-1/ap2.md).
+
 ## Development Workflow
 
 ```text
