@@ -1,0 +1,29 @@
+{
+  "name": "dev-companion",
+  "version": "1.0.0",
+  "description": "A guideline and companion for indie and solo developers: a clean, documented line to follow from day one, and recognition for **consistency** — not for how much you shipped in a sitting.",
+  "homepage": "https://github.com/ktauchert/dev-companion#readme",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/ktauchert/dev-companion/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ktauchert/dev-companion.git"
+  },
+  "license": "ISC",
+  "author": "Karsten Tauchert",
+  "type": "commonjs",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev:web": "npm run dev -w web",
+    "dev:api": "npm run start:dev -w api"
+  }
+}

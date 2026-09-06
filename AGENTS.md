@@ -45,6 +45,7 @@ Typical homes:
 | Structure and module boundaries | `docs/architecture/overview.md`, `docs/architecture/domain-modules.md`, `docs/architecture/monorepo.md` |
 | Significant decisions | `docs/adr/` |
 | How we work | `docs/development.md`, `CONTRIBUTING.md`, this file |
+| Implementation notes | `docs/lessons-learned/` |
 | Docs index | `docs/README.md` |
 
 Prefer updating an existing doc over adding a new one. Add an ADR when the choice is architectural and should stay reviewable.

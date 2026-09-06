@@ -26,3 +26,7 @@ Index of project documents. Root stays lean: `README.md`, `AGENTS.md`, `CONTRIBU
 * [Development](development.md) — setup, workflow, GitHub remote
 * [Contributing](../CONTRIBUTING.md)
 * [Agent instructions](../AGENTS.md)
+
+## Lessons learned
+
+* [Phase 1 / AP 1.1 Monorepo](lessons-learned/phase-1/ap1.md)

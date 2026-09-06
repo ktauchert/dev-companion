@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Build
+dist/
+dist-ssr/
+build/
+coverage/
+*.tsbuildinfo
+
+# Env
+.env
+.env.*
+!.env.example
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Tooling
+.vite/
+.tanstack/
+.nitro/
+.output/
+.wrangler/
+.nest/
+
+# OS / editor
+.DS_Store
+.idea/
+*.swp
