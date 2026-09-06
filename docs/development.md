@@ -15,8 +15,9 @@ Expected services:
 
 ```text
 PostgreSQL
-Redis
 ```
+
+Redis is not in the initial stack. It appeared as a template default (cache, queues, workers). There are no workers yet, and Phase 1 has no LLM jobs. Add Redis when a concrete need exists.
 
 Additional services may be introduced when required.
 
