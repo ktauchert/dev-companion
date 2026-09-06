@@ -128,5 +128,5 @@ The consistency loop (acknowledge showing up, compliment small contributions, ne
 
 ## Status
 
-The roadmap is sequencing, not the product thesis. The thesis is in the [project plan](project-plan.md): a line to follow, a clean start, consistency over intensity.
+The roadmap is sequencing at product level. Day-to-day follow the work packages in the [phase plan](phasenplan.md).
 

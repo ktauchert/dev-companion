@@ -17,7 +17,7 @@ Full project docs live under [`docs/`](docs/README.md).
 
 | | |
 | --- | --- |
-| Product | [Plan](docs/planning/project-plan.md) · [Roadmap](docs/planning/roadmap.md) |
+| Product | [Plan](docs/planning/project-plan.md) · [Phasenplan](docs/planning/phasenplan.md) · [Roadmap](docs/planning/roadmap.md) |
 | Architecture | [Overview](docs/architecture/overview.md) · [Modules](docs/architecture/domain-modules.md) · [Monorepo](docs/architecture/monorepo.md) · [Stack](docs/architecture/tech-stack.md) |
 | Decisions | [ADRs](docs/adr/) |
 | Working here | [Development](docs/development.md) · [Contributing](CONTRIBUTING.md) · [Agents](AGENTS.md) |
