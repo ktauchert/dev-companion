@@ -2,10 +2,14 @@
 
 ## Frontend
 
-* Next.js
+* Vite
+* React
+* TanStack Router
 * TypeScript
 * Tailwind CSS
 * shadcn/ui
+
+`apps/web` is a SPA. It talks to the NestJS API. See [ADR-003](../adr/ADR-003-WEB-TANSTACK-ROUTER.md). Next.js was listed earlier as a generated default and is not used.
 
 ## Backend
 

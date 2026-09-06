@@ -46,7 +46,7 @@ Diskussion, dann Docs. Kein Produktcode.
 | AP 0.1 | Motivation und Plan | `project-plan.md` trägt die echte Motivation |
 | AP 0.2 | Doc-Struktur | Root nur README, AGENTS, CONTRIBUTING; Rest unter `docs/` |
 | AP 0.3 | Arbeitsmodus Agent | Companion-first, Commit-Message-Konvention |
-| AP 0.4 | Name und Stack-Entscheidungen | Dev-Companion, npm, ADRs 001/002 |
+| AP 0.4 | Name und Stack-Entscheidungen | Dev-Companion, npm, ADRs 001/002/003 |
 
 ---
 
@@ -60,7 +60,7 @@ Die Linie muss **betretbar** sein: einloggen, Projekt anlegen, Dashboard sehen, 
 
 ### Was
 
-Laufendes lokales System: Monorepo (Next.js + NestJS), Docker (PostgreSQL, Redis), Auth, Projekte mit Besitz, Dokumentenspeicher (noch ohne Wizard), Dashboard mit leichtem Progress-Hinweis. CI, das zumindest installiert und typecheckt.
+Laufendes lokales System: Monorepo (Vite/TanStack Router + NestJS), Docker (PostgreSQL, Redis), Auth, Projekte mit Besitz, Dokumentenspeicher (noch ohne Wizard), Dashboard mit leichtem Progress-Hinweis. CI, das zumindest installiert und typecheckt.
 
 ### Wie
 

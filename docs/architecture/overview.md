@@ -41,6 +41,9 @@ Responsible for:
 * User interaction
 * Presentation
 * Client-side state
+* Client routing (TanStack Router)
+
+The web app is a Vite SPA. It does not own domain logic or persistence; it calls the API. See [ADR-003](../adr/ADR-003-WEB-TANSTACK-ROUTER.md).
 
 ### API
 
