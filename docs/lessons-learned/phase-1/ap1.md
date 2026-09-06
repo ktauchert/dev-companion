@@ -68,9 +68,9 @@ Ohne Ignore landen `node_modules`, Dist, `.env`, Vite-Cache im Git. App-`.gitign
 
 ### Frontend-Stack vor dem Scaffold festziehen
 
-Next.js stand in den Docs ohne ADR. Erst ADR-003 (Vite + TanStack Router, nicht Start, nicht Next), dann Scaffold. Sonst muss das erste Ticket die falsche App wieder ausbauen.
+Next.js stand in den Docs ohne ADR. Erst ADR-003 (SPA + Nest als Schnitt, nicht Next/Start), dann Scaffold. Sonst muss das erste Ticket die falsche App wieder ausbauen.
 
-TanStack Router ist nur Routing. Vite ist Bundler/Dev-Server. TanStack Start wäre Router + Vite + extra Server — den wollen wir nicht, Nest bleibt das Backend.
+TanStack Router ist nur Routing. Vite ist Bundler/Dev-Server. Nest ist die API. TanStack Start wäre ein extra Server — den wollen wir nicht.
 
 ### Was in AP 1.1 bewusst nicht gemacht wird
 

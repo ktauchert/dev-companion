@@ -43,7 +43,7 @@ Responsible for:
 * Client-side state
 * Client routing (TanStack Router)
 
-The web app is a Vite SPA. It does not own domain logic or persistence; it calls the API. See [ADR-003](../adr/ADR-003-WEB-TANSTACK-ROUTER.md).
+The web app is a Vite SPA. It does not own domain logic or persistence; it calls the NestJS API. See [ADR-003](../adr/ADR-003-SPA-AND-NEST-API.md).
 
 ### API
 

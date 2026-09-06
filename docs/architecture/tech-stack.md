@@ -9,12 +9,14 @@
 * Tailwind CSS
 * shadcn/ui
 
-`apps/web` is a SPA. It talks to the NestJS API. See [ADR-003](../adr/ADR-003-WEB-TANSTACK-ROUTER.md). Next.js was listed earlier as a generated default and is not used.
+`apps/web` is a SPA. `apps/api` is NestJS. They are one split: UI talks to the API. See [ADR-003](../adr/ADR-003-SPA-AND-NEST-API.md). Next.js is not used.
 
 ## Backend
 
 * NestJS
 * TypeScript
+
+See [ADR-003](../adr/ADR-003-SPA-AND-NEST-API.md).
 
 ## Database
 
