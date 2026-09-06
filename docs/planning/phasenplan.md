@@ -2,7 +2,7 @@
 
 Arbeitsplan zum Folgen. Die [Roadmap](roadmap.md) ist die Produktsicht; dieses Dokument ist die **Reihenfolge der Arbeit**. Ein Arbeitspaket nach dem anderen. Code nur nach expliziter Freigabe (`code`, `execute`, `umsetzen`, `make it so`).
 
-**Aktuell:** Phase 0 ist erledigt. Als Nächstes Phase 1.
+**Aktuell:** Phase 0 und AP 1.1 sind erledigt. Als Nächstes **AP 1.2**.
 
 ```mermaid
 flowchart LR
@@ -60,7 +60,7 @@ Die Linie muss **betretbar** sein: einloggen, Projekt anlegen, Dashboard sehen, 
 
 ### Was
 
-Laufendes lokales System: Monorepo (Vite/TanStack Router + NestJS), Docker (PostgreSQL, Redis), Auth, Projekte mit Besitz, Dokumentenspeicher (noch ohne Wizard), Dashboard mit leichtem Progress-Hinweis. CI, das zumindest installiert und typecheckt.
+Laufendes lokales System: Monorepo (Vite/TanStack Router + NestJS), Docker (PostgreSQL), Auth, Projekte mit Besitz, Dokumentenspeicher (noch ohne Wizard), Dashboard mit leichtem Progress-Hinweis. CI, das zumindest installiert und typecheckt.
 
 ### Wie
 
@@ -71,7 +71,7 @@ Zuerst Grenzen und Datenmodell in Docs schärfen, dann Arbeitspaketweise umsetze
 | ID | Paket | Was | Wie | Fertig wenn |
 | --- | --- | --- | --- | --- |
 | AP 1.1 | Monorepo | `apps/web`, `apps/api`, `packages/*` als npm Workspaces | Scaffold passend zu `docs/architecture/monorepo.md` | `npm install` im Root, beide Apps starten leer aber gültig |
-| AP 1.2 | Lokal-Infra | PostgreSQL + Redis per Docker Compose | Compose unter `infrastructure/` bzw. Root, wie in `docs/development.md` | `docker compose up` reicht für lokale DB |
+| AP 1.2 | Lokal-Infra | PostgreSQL per Docker Compose | Compose unter `infrastructure/` bzw. Root, wie in `docs/development.md`. Kein Redis, solange es keine Worker/Jobs gibt. | `docker compose up` reicht für lokale Postgres |
 | AP 1.3 | Datenbank | Drizzle-Schema, Migrationen, Zugriff in `packages/database` | Schema klein halten: User, Session, Project, Document | Migration läuft gegen Compose-Postgres |
 | AP 1.4 | Auth | Registrierung, Login, Session, Projektbesitz | Better Auth hinter Auth-Grenze | Nutzer kann Konto anlegen und bleibt eingeloggt |
 | AP 1.5 | Projekte | Anlegen, bearbeiten, besitzen, Status | Domain `projects`, API + einfache UI | Ein User hat mindestens ein eigenes Projekt |
@@ -284,11 +284,11 @@ Keine Parent-Issues. Die Phase ist das Milestone, das Arbeitspaket ist das Issue
   → Milestone Phase 1 zeigt 1 / 8
 ```
 
-Gearbeitet wird nur am aktuellen Paket: **[#1 AP 1.1 — Monorepo](https://github.com/ktauchert/dev-companion/issues/1)**.
+Gearbeitet wird nur am aktuellen Paket: **[#2 AP 1.2 — Lokal-Infra](https://github.com/ktauchert/dev-companion/issues/2)**.
 
 ## So folgen
 
-1. Nur das aktuelle Arbeitspaket: **[#1 AP 1.1 — Monorepo](https://github.com/ktauchert/dev-companion/issues/1)**.
+1. Nur das aktuelle Arbeitspaket: **[#2 AP 1.2 — Lokal-Infra](https://github.com/ktauchert/dev-companion/issues/2)**.
 2. Zuerst in Docs klären, wenn etwas fehlt (Modell, Grenze, ADR).
 3. Dann bewusst umsetzen lassen — idealerweise auf dem Branch der zugehörigen Issue.
 4. Fertig-wenn prüfen, PR mergen, Issue schließen, dann das nächste Paket.
