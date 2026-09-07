@@ -82,3 +82,13 @@ volumes:
 ```
 
 AP 1.2 ist „Postgres läuft“. Die API anbinden ist AP 1.3.
+
+## Nachtrag nach dem Merge
+
+Was in `docker-compose.yml` landete, weicht von dem How-to oben ab:
+
+* Env-Var `POSTGRES_PASSWORT` statt `POSTGRES_PASSWORD` (offizielles Image liest nur die englische Form).
+* Port-Mapping `5454:5454`. Postgres lauscht im Container auf **5432**. Ein abweichender Host-Port wäre `5454:5432` (oder frei → `5432:5432`).
+* `.env.example` nutzt Platzhalter und `POSTGRES_URL` auf `localhost:5432`, nicht dieselben Werte wie Compose.
+
+Das in AP 1.3 richten, sobald Drizzle verbinden soll. Details: [Phasenplan, Hinweise zu AP 1.3](../../planning/phasenplan.md#hinweise-zu-ap-13-jetzt).

@@ -21,7 +21,9 @@ Redis is not in the initial stack. It appeared as a template default (cache, que
 
 Additional services may be introduced when required.
 
-Compose how-to and pitfalls for AP 1.2: [lessons-learned/phase-1/ap2.md](lessons-learned/phase-1/ap2.md).
+Compose how-to and pitfalls for AP 1.2: [lessons-learned/phase-1/ap2.md](lessons-learned/phase-1/ap2.md). Drizzle, schema, and `DATABASE_URL` are AP 1.3 — see [phase plan](planning/phasenplan.md#hinweise-zu-ap-13-jetzt).
+
+AP 1.2 left a few mismatches that block a client: Compose uses `POSTGRES_PASSWORT` and `5454:5454`, while `.env.example` uses `POSTGRES_PASSWORD` / `POSTGRES_URL` on `localhost:5432`. Fix those when connecting Drizzle, not as a separate work package.
 
 ## Development Workflow
 

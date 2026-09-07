@@ -2,7 +2,7 @@
 
 Arbeitsplan zum Folgen. Die [Roadmap](roadmap.md) ist die Produktsicht; dieses Dokument ist die **Reihenfolge der Arbeit**. Ein Arbeitspaket nach dem anderen. Code nur nach expliziter Freigabe (`code`, `execute`, `umsetzen`, `make it so`).
 
-**Aktuell:** Phase 0 und AP 1.1 sind erledigt. Als Nächstes **AP 1.2**.
+**Aktuell:** Phase 0, AP 1.1 und AP 1.2 sind erledigt. Als Nächstes **AP 1.3**.
 
 ```mermaid
 flowchart LR
@@ -16,7 +16,7 @@ flowchart LR
 
 ```text
 Orientierung → Fundament → Ideation → Architektur → Planung → Begleitung → Team
-     done         next
+     done       in Arbeit
 ```
 
 Progress (Konsistenz anerkennen, kleine Beiträge zählen, kein Volumen-Score) ist **kein spätes Extra**. Es beginnt sichtbar im Dashboard (Phase 1) und wird mit jeder Phase reicher — nie als Streak-Druck.
@@ -52,7 +52,7 @@ Diskussion, dann Docs. Kein Produktcode.
 
 ## Phase 1 — Fundament
 
-**Status:** als Nächstes.
+**Status:** in Arbeit (2 / 8 Pakete erledigt).
 
 ### Warum
 
@@ -80,6 +80,41 @@ Zuerst Grenzen und Datenmodell in Docs schärfen, dann Arbeitspaketweise umsetze
 | AP 1.8 | Qualität | Lint, Typecheck, erste Tests, GitHub Actions | Gates aus `docs/development.md` | CI läuft auf `main` |
 
 **Nicht in Phase 1:** LLM-Aufrufe, Ideation-Wizard, Team, Deployment auf Render (lokal reicht).
+
+### Hinweise zu AP 1.3 (jetzt)
+
+Issue: [#3 AP 1.3 — Datenbank](https://github.com/ktauchert/dev-companion/issues/3). Branch wenn umgesetzt wird: `ap-1-3-datenbank`.
+
+**Fertig-wenn bleibt:** eine Drizzle-Migration läuft gegen die Compose-Postgres. Nicht: Login, Projekt-CRUD, Dokument-Versionen, Dashboard, CI.
+
+**Schon da:** leere Hülle `packages/database` (nur `package.json`). Postgres per Compose aus AP 1.2. Nest und Vite starten, ohne DB.
+
+**In diesem Paket**
+
+- Drizzle in `packages/database`: Schema, Client, `drizzle-kit`, erste Migration.
+- Tabellen klein: User, Session, Project, Document.
+- `apps/api` darf den Client nur als Verbindung nutzen (Nest-Modul / `DATABASE_URL`). Keine Domain-APIs.
+- `.env.example` an Compose angleichen (`DATABASE_URL` für die App, `POSTGRES_*` für Compose).
+
+**Nicht in diesem Paket**
+
+- Better Auth verdrahten (AP 1.4).
+- Projekte anlegen/bearbeiten (AP 1.5).
+- Dokument-Historie / Wizard (AP 1.6).
+- Domain-Logik in `packages/database` — das Package ist Infrastruktur, nicht die Projects-/Documents-Domain.
+
+**Vor dem Coden klären:** User/Session nicht frei erfinden. Better Auth (AP 1.4) erwartet eigene Tabellen (`user`, `session`, plus in der Praxis `account` und `verification`). Entweder diese Tabellen jetzt aus dem Better-Auth-Schema übernehmen, ohne die Library zu verdrahten — oder User/Session auf AP 1.4 verschieben und in 1.3 nur Project/Document (mit `owner_id` als Text/UUID). Eigenes User-Modell jetzt heißt in 1.4 umbauen.
+
+Document in 1.3 = aktuelle Zeile (Projekt, Titel/Typ, Inhalt, Zeitstempel). Versionstabelle erst in AP 1.6.
+
+**AP 1.2-Rest, sonst verbindet migrate nicht:** Compose setzt `POSTGRES_PASSWORT` (Postgres liest `POSTGRES_PASSWORD`). Port-Mapping ist `5454:5454` (Container lauscht auf 5432). `.env.example` hat Platzhalter und `POSTGRES_URL` auf `localhost:5432`. Das am Anfang von 1.3 richten, nicht als neues Arbeitspaket.
+
+**Wenn umgesetzt wird (Reihenfolge)**
+
+1. Compose/Env so, dass ein Client wirklich verbindet (Passwort-Var, Host-Port → 5432 im Container, `DATABASE_URL`).
+2. Drizzle-Abhängigkeiten und Config in `packages/database`.
+3. Minimales Schema, Migration erzeugen, gegen Compose anwenden.
+4. Client exportieren; Nest hängt ihn an `DATABASE_URL`. Optional: Health-Ping — nicht nötig für Fertig-wenn.
 
 ---
 
@@ -284,11 +319,11 @@ Keine Parent-Issues. Die Phase ist das Milestone, das Arbeitspaket ist das Issue
   → Milestone Phase 1 zeigt 1 / 8
 ```
 
-Gearbeitet wird nur am aktuellen Paket: **[#2 AP 1.2 — Lokal-Infra](https://github.com/ktauchert/dev-companion/issues/2)**.
+Gearbeitet wird nur am aktuellen Paket: **[#3 AP 1.3 — Datenbank](https://github.com/ktauchert/dev-companion/issues/3)**.
 
 ## So folgen
 
-1. Nur das aktuelle Arbeitspaket: **[#2 AP 1.2 — Lokal-Infra](https://github.com/ktauchert/dev-companion/issues/2)**.
+1. Nur das aktuelle Arbeitspaket: **[#3 AP 1.3 — Datenbank](https://github.com/ktauchert/dev-companion/issues/3)**.
 2. Zuerst in Docs klären, wenn etwas fehlt (Modell, Grenze, ADR).
 3. Dann bewusst umsetzen lassen — idealerweise auf dem Branch der zugehörigen Issue.
 4. Fertig-wenn prüfen, PR mergen, Issue schließen, dann das nächste Paket.
