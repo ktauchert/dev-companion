@@ -17,11 +17,26 @@ Expected services:
 PostgreSQL
 ```
 
-Redis is not in the initial stack. It appeared as a template default (cache, queues, workers). There are no workers yet, and Phase 1 has no LLM jobs. Add Redis when a concrete need exists.
+One Compose Postgres, one database. Redis is not in the initial stack. It appeared as a template default (cache, queues, workers). There are no workers yet, and Phase 1 has no LLM jobs. Add Redis when a concrete need exists.
 
 Additional services may be introduced when required.
 
 Compose how-to and pitfalls for AP 1.2: [lessons-learned/phase-1/ap2.md](lessons-learned/phase-1/ap2.md).
+
+### Database (AP 1.3)
+
+Postgres **creates the empty database** on first container start (`POSTGRES_DB`). Tables are **not** created by Compose. They come from Drizzle migrations in `packages/database`, applied against `POSTGRES_URL`.
+
+```text
+docker compose up -d          # server + empty DB (AP 1.2)
+# then: drizzle migrate       # tables (AP 1.3)
+```
+
+Connection vars stay in the `POSTGRES_*` family (`POSTGRES_USER`, `POSTGRES_PASSWORD`, `POSTGRES_DB`, `POSTGRES_URL`). No separate `DATABASE_URL`.
+
+Host port is **5454** (`5454:5432`) because 5432 was already in use locally. `POSTGRES_URL` must match Compose user, password, database name, and that host port. The API is the only app that uses the URL. Schema and client live in `@dev-companion/database`; `apps/web` does not talk to Postgres.
+
+AP 1.3 steps and schema boundary: [lessons-learned/phase-1/ap3.md](lessons-learned/phase-1/ap3.md).
 
 ## Development Workflow
 

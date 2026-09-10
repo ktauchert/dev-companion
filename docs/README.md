@@ -31,3 +31,4 @@ Index of project documents. Root stays lean: `README.md`, `AGENTS.md`, `CONTRIBU
 
 * [Phase 1 / AP 1.1 Monorepo](lessons-learned/phase-1/ap1.md)
 * [Phase 1 / AP 1.2 Lokal-Infra](lessons-learned/phase-1/ap2.md)
+* [Phase 1 / AP 1.3 Datenbank](lessons-learned/phase-1/ap3.md)
