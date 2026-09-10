@@ -20,26 +20,26 @@ Postgres bleibt, weil User, Projekte und Dokumente persistent sein müssen. Redi
 
 **Named Volume.** Daten überleben Container-Neustarts. Datenordner im Repo würde Git vollmüllen.
 
-**`.env` / `.env.example`.** Passwort nicht ins Git (`.env` ist gitignored). `.env.example` committen. `devcompanion` ist nur ein lokaler Platzhalter für User, Passwort und DB-Name (Produktname), kein Docker-Zwang. Werte müssen zwischen Compose, `.env` und später `DATABASE_URL` übereinstimmen. In Produktion diese Defaults nicht kopieren.
+**`.env` / `.env.example`.** Passwort nicht ins Git (`.env` ist gitignored). `.env.example` committen. `devcompanion` ist nur ein lokaler Platzhalter für User, Passwort und DB-Name (Produktname), kein Docker-Zwang. Env-Vars bleiben in der `POSTGRES_*`-Familie: `POSTGRES_USER`, `POSTGRES_PASSWORD`, `POSTGRES_DB`, Verbindungsstring **`POSTGRES_URL`**. Werte müssen zwischen Compose, `.env` und `POSTGRES_URL` übereinstimmen. In Produktion diese Defaults nicht kopieren.
 
 **Image `postgres:16`, nicht `latest`.** Major pinnen, keine Überraschung beim Pull.
+
+**Host-Port 5454.** 5432 war lokal belegt. Mapping `5454:5432`: der Container-Port bleibt der Postgres-Default.
 
 **Healthcheck.** AP 1.3 kann warten, bis Postgres Verbindungen annimmt, statt gegen einen noch startenden Container zu rennen.
 
 ## Ports vorher prüfen
 
-Bevor Compose `5432:5432` bindet: prüfen, ob **5432 auf dem Host frei** ist.
+Postgres im Container lauscht immer auf **5432**. Auf diesem Rechner war **Host-5432 schon belegt**, deshalb mappt Compose **`5454:5432`**: Tools auf dem Host nutzen `localhost:5454`, die URL steht in `POSTGRES_URL`.
 
-Warum: Eine lokale Postgres, ein anderes Compose-Projekt oder ein IDE-Plugin kann den Port schon belegen. Dann schlägt `compose up` fehl — oder schlimmer: Tools verbinden sich mit der **falschen** Instanz.
+Vor dem Publish prüfen, welcher Host-Port frei ist — sonst verbindet man sich mit der **falschen** Instanz.
 
 ```text
-ss -ltn | grep 5432
-# oder: lsof -i :5432
+ss -ltn | grep -E '5432|5454'
+# oder: lsof -i :5432 ; lsof -i :5454
 ```
 
-Nichts auf 5432 → so lassen. Port belegt → anderen Host-Port mappen (`5433:5432`) und `DATABASE_URL` anpassen, oder den fremden Dienst stoppen. Nicht raten, welcher Postgres antwortet.
-
-5432 nur lokal publishen, nicht auf einem öffentlichen Server öffnen.
+Host-Port nur lokal publishen, nicht auf einem öffentlichen Server öffnen. `POSTGRES_URL` muss den **Host-Port** enthalten (hier 5454), nicht den Container-Port.
 
 ## Compose
 
@@ -55,12 +55,12 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-devcompanion}
       POSTGRES_DB: ${POSTGRES_DB:-devcompanion}
     ports:
-      - "5432:5432"
+      - "5454:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U devcompanion -d devcompanion"]
-      interval: 5s
+      interval: 15s
       timeout: 5s
       retries: 5
 
@@ -72,9 +72,9 @@ volumes:
 
 ```text
 1. Jeden geplanten Dienst rechtfertigen (siehe oben) — unnötige DBs/Caches streichen
-2. Port 5432 prüfen (siehe oben)
-3. docker-compose.yml im Root
-4. .env.example (POSTGRES_* und DATABASE_URL auf localhost:5432)
+2. Host-Port prüfen; hier 5454, weil 5432 belegt war (siehe oben)
+3. docker-compose.yml im Root (`5454:5432`, `POSTGRES_PASSWORD`)
+4. .env.example (POSTGRES_USER / PASSWORD / DB / URL auf localhost:5454)
 5. cp .env.example .env   # nie committen
 6. docker compose up -d
 7. docker compose ps      # healthy

@@ -4,10 +4,10 @@ services:
     restart: unless-stopped
     environment:
       POSTGRES_USER: ${POSTGRES_USER:-devcompanion}
-      POSTGRES_PASSWORT: ${POSTGRES_PASSWORT:-devcompanion}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-devcompanion}
       POSTGRES_DB: ${POSTGRES_DB:-devcompanion}
     ports:
-      - "5454:5454"
+      - "5454:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:

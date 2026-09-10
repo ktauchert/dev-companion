@@ -72,7 +72,7 @@ Zuerst Grenzen und Datenmodell in Docs schärfen, dann Arbeitspaketweise umsetze
 | --- | --- | --- | --- | --- |
 | AP 1.1 | Monorepo | `apps/web`, `apps/api`, `packages/*` als npm Workspaces | Scaffold passend zu `docs/architecture/monorepo.md` | `npm install` im Root, beide Apps starten leer aber gültig |
 | AP 1.2 | Lokal-Infra | PostgreSQL per Docker Compose | Compose unter `infrastructure/` bzw. Root, wie in `docs/development.md`. Kein Redis, solange es keine Worker/Jobs gibt. | `docker compose up` reicht für lokale Postgres |
-| AP 1.3 | Datenbank | Drizzle-Schema, Migrationen, Zugriff in `packages/database` | Schema klein halten: User, Session, Project, Document | Migration läuft gegen Compose-Postgres |
+| AP 1.3 | Datenbank | Drizzle-Schema, Migrationen, Zugriff in `packages/database` | Kein zweiter Server: Tabellen per Migration in die Compose-Postgres aus 1.2. Schema klein: User, Session, Project, Document. Details: `docs/lessons-learned/phase-1/ap3.md`. | Migration läuft gegen Compose-Postgres |
 | AP 1.4 | Auth | Registrierung, Login, Session, Projektbesitz | Better Auth hinter Auth-Grenze | Nutzer kann Konto anlegen und bleibt eingeloggt |
 | AP 1.5 | Projekte | Anlegen, bearbeiten, besitzen, Status | Domain `projects`, API + einfache UI | Ein User hat mindestens ein eigenes Projekt |
 | AP 1.6 | Dokumentenkern | Persistente, versionierbare Artefakte | Domain `documents` ohne Wizard; Speichern/Lesen/Version | Ein Dokument kann angelegt und versioniert werden |
