@@ -40,7 +40,7 @@ Typical homes:
 | Kind of outcome | Prefer |
 | --- | --- |
 | Product intent, users, problem/solution | `docs/planning/project-plan.md`, `README.md` |
-| Sequencing and phases | `docs/planning/phasenplan.md` (work packages), `docs/planning/roadmap.md` (product view) |
+| Sequencing and phases | `docs/planning/phasenplan.md` (order), `docs/planning/phases/` (implementation plans per AP), `docs/planning/roadmap.md` (product view) |
 | Stack choices | `docs/architecture/tech-stack.md` |
 | Structure and module boundaries | `docs/architecture/overview.md`, `docs/architecture/domain-modules.md`, `docs/architecture/monorepo.md` |
 | Significant decisions | `docs/adr/` |

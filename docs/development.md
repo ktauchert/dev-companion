@@ -36,7 +36,7 @@ Connection vars stay in the `POSTGRES_*` family (`POSTGRES_USER`, `POSTGRES_PASS
 
 Host port is **5454** (`5454:5432`) because 5432 was already in use locally. `POSTGRES_URL` must match Compose user, password, database name, and that host port. The API is the only app that uses the URL. Schema and client live in `@dev-companion/database`; `apps/web` does not talk to Postgres.
 
-AP 1.3 steps and schema boundary: [lessons-learned/phase-1/ap3.md](lessons-learned/phase-1/ap3.md).
+AP 1.3 implementation plan: [planning/phases/phase1/ap-1.3-datenbank.md](planning/phases/phase1/ap-1.3-datenbank.md). Compose pitfalls: [lessons-learned/phase-1/ap2.md](lessons-learned/phase-1/ap2.md).
 
 ## Development Workflow
 

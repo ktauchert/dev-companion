@@ -2,7 +2,9 @@
 
 Arbeitsplan zum Folgen. Die [Roadmap](roadmap.md) ist die Produktsicht; dieses Dokument ist die **Reihenfolge der Arbeit**. Ein Arbeitspaket nach dem anderen. Code nur nach expliziter Freigabe (`code`, `execute`, `umsetzen`, `make it so`).
 
-**Aktuell:** Phase 0 und AP 1.1 sind erledigt. Als Nächstes **AP 1.2**.
+**Aktuell:** Phase 0, AP 1.1 und AP 1.2 sind erledigt. Als Nächstes **[AP 1.3 — Datenbank](phases/phase1/ap-1.3-datenbank.md)**.
+
+Umsetzungspläne (was genau, was nötig ist): [planning/phases](phases/). Phase 1 ab 1.3: [phases/phase1](phases/phase1/).
 
 ```mermaid
 flowchart LR
@@ -52,7 +54,7 @@ Diskussion, dann Docs. Kein Produktcode.
 
 ## Phase 1 — Fundament
 
-**Status:** als Nächstes.
+**Status:** in Arbeit — AP 1.1 und 1.2 erledigt, **AP 1.3** als Nächstes.
 
 ### Warum
 
@@ -72,12 +74,12 @@ Zuerst Grenzen und Datenmodell in Docs schärfen, dann Arbeitspaketweise umsetze
 | --- | --- | --- | --- | --- |
 | AP 1.1 | Monorepo | `apps/web`, `apps/api`, `packages/*` als npm Workspaces | Scaffold passend zu `docs/architecture/monorepo.md` | `npm install` im Root, beide Apps starten leer aber gültig |
 | AP 1.2 | Lokal-Infra | PostgreSQL per Docker Compose | Compose unter `infrastructure/` bzw. Root, wie in `docs/development.md`. Kein Redis, solange es keine Worker/Jobs gibt. | `docker compose up` reicht für lokale Postgres |
-| AP 1.3 | Datenbank | Drizzle-Schema, Migrationen, Zugriff in `packages/database` | Kein zweiter Server: Tabellen per Migration in die Compose-Postgres aus 1.2. Schema klein: User, Session, Project, Document. Details: `docs/lessons-learned/phase-1/ap3.md`. | Migration läuft gegen Compose-Postgres |
-| AP 1.4 | Auth | Registrierung, Login, Session, Projektbesitz | Better Auth hinter Auth-Grenze | Nutzer kann Konto anlegen und bleibt eingeloggt |
-| AP 1.5 | Projekte | Anlegen, bearbeiten, besitzen, Status | Domain `projects`, API + einfache UI | Ein User hat mindestens ein eigenes Projekt |
-| AP 1.6 | Dokumentenkern | Persistente, versionierbare Artefakte | Domain `documents` ohne Wizard; Speichern/Lesen/Version | Ein Dokument kann angelegt und versioniert werden |
-| AP 1.7 | Dashboard | Projektübersicht, Status, erster Konsistenz-Hinweis | Web-Shell (Tailwind, shadcn), Ton ermutigend, nicht wertend | Nach einer kleinen Änderung sieht der User Anerkennung, nicht eine Punktzahl |
-| AP 1.8 | Qualität | Lint, Typecheck, erste Tests, GitHub Actions | Gates aus `docs/development.md` | CI läuft auf `main` |
+| AP 1.3 | Datenbank | Drizzle-Schema, Migrationen, Zugriff in `packages/database` | [Umsetzungsplan](phases/phase1/ap-1.3-datenbank.md) | Migration läuft gegen Compose-Postgres |
+| AP 1.4 | Auth | Registrierung, Login, Session, Projektbesitz | [Umsetzungsplan](phases/phase1/ap-1.4-auth.md) | Nutzer kann Konto anlegen und bleibt eingeloggt |
+| AP 1.5 | Projekte | Anlegen, bearbeiten, besitzen, Status | [Umsetzungsplan](phases/phase1/ap-1.5-projekte.md) | Ein User hat mindestens ein eigenes Projekt |
+| AP 1.6 | Dokumentenkern | Persistente, versionierbare Artefakte | [Umsetzungsplan](phases/phase1/ap-1.6-dokumentenkern.md) | Ein Dokument kann angelegt und versioniert werden |
+| AP 1.7 | Dashboard | Projektübersicht, Status, erster Konsistenz-Hinweis | [Umsetzungsplan](phases/phase1/ap-1.7-dashboard.md) | Nach einer kleinen Änderung sieht der User Anerkennung, nicht eine Punktzahl |
+| AP 1.8 | Qualität | Lint, Typecheck, erste Tests, GitHub Actions | [Umsetzungsplan](phases/phase1/ap-1.8-qualitaet.md) | CI läuft auf `main` |
 
 **Nicht in Phase 1:** LLM-Aufrufe, Ideation-Wizard, Team, Deployment auf Render (lokal reicht).
 
@@ -284,11 +286,11 @@ Keine Parent-Issues. Die Phase ist das Milestone, das Arbeitspaket ist das Issue
   → Milestone Phase 1 zeigt 1 / 8
 ```
 
-Gearbeitet wird nur am aktuellen Paket: **[#2 AP 1.2 — Lokal-Infra](https://github.com/ktauchert/dev-companion/issues/2)**.
+Gearbeitet wird nur am aktuellen Paket: **[#3 AP 1.3 — Datenbank](https://github.com/ktauchert/dev-companion/issues/3)**. Plan: [phases/phase1/ap-1.3-datenbank.md](phases/phase1/ap-1.3-datenbank.md).
 
 ## So folgen
 
-1. Nur das aktuelle Arbeitspaket: **[#2 AP 1.2 — Lokal-Infra](https://github.com/ktauchert/dev-companion/issues/2)**.
+1. Nur das aktuelle Arbeitspaket: **[#3 AP 1.3 — Datenbank](https://github.com/ktauchert/dev-companion/issues/3)**.
 2. Zuerst in Docs klären, wenn etwas fehlt (Modell, Grenze, ADR).
 3. Dann bewusst umsetzen lassen — idealerweise auf dem Branch der zugehörigen Issue.
 4. Fertig-wenn prüfen, PR mergen, Issue schließen, dann das nächste Paket.

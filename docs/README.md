@@ -6,6 +6,7 @@ Index of project documents. Root stays lean: `README.md`, `AGENTS.md`, `CONTRIBU
 
 * [Project plan](planning/project-plan.md) — motivation, users, problem, solution
 * [Phase plan](planning/phasenplan.md) — horizontal phases and work packages (follow this)
+* [Implementation plans](planning/phases/) — what to do per work package (Phase 1 from AP 1.3)
 * [Roadmap](planning/roadmap.md) — product phases
 
 ## Architecture
