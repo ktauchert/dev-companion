@@ -1,132 +1,50 @@
 # Roadmap
 
+Revised after strategic refocus (ADR-004). See [TODO.md](../../TODO.md) for the prioritized MVP checklist.
+
 ## Phase 1 — Foundation
 
-### User Management
-
-* Registration
-* Login
-* Session management
-* User/project ownership
-
-### Project Management
-
-* Create project
-* Edit project
-* Project dashboard
-* Project status
-* First acknowledgement of contribution (consistency over volume — keep this light)
-
-### Infrastructure
-
-* Monorepo
-* Docker
-* PostgreSQL
+* Monorepo with three core packages
+* Database, auth, project linking
+* Document storage for artifacts
 * CI pipeline
-* Development environment
 
----
+## Phase 2 — Architecture Generator
 
-## Phase 2 — Ideation Engine
+* LLM provider adapters (OpenAI, Ollama)
+* Idea → spec + ADR prompt chains
+* Repo seeding (push README, spec.md, docs/adr/)
+* Web: idea input wizard
 
-### Ideation Wizard
+## Phase 3 — Board Sync
 
-* Problem definition
-* Target users
-* Value proposition
-* Goals
-* Risks
-* Constraints
+* GitHub board adapter (milestones, issues, labels)
+* Spec/ADR → epic/story/task decomposition
+* Board seeding from artifacts
+* GitLab adapter (stretch)
 
-### AI Integration
+## Phase 4 — SDLC Dashboard
 
-* Structured project analysis
-* Summary generation
-* Scope analysis
-* Project maturity assessment
-* Recommendations
+* Progress aggregation from board state
+* ADR compliance checking on pull requests
+* Deployment guide generation
+* Web: dashboard, compliance reports, deployment viewer
 
-### Documents
+## Phase 5 — Deployment Modes
 
-* Generate initial project documents
-* Persist generated artifacts
-* Document versioning
+* Docker Compose for on-premise
+* GitHub App / OAuth for SaaS
+* Environment-based provider selection
 
----
+## Removed from roadmap
 
-## Phase 3 — Architecture Assistant
+The following phases from the original roadmap are **out of scope**:
 
-### Stack Recommendation
+* ~~Development Companion~~ (code review, test suggestions, implementation guidance)
+* ~~Team Features~~ (deferred post-MVP)
 
-* Frontend
-* Backend
-* Database
-* Infrastructure
-* Hosting
-
-### Architecture
-
-* High-level architecture
-* Component overview
-* Data model proposals
-* Architecture documentation
-
-### ADRs
-
-* Create ADRs
-* AI-assisted ADR generation
-* Decision history
-
----
-
-## Phase 4 — Planning Engine
-
-### Product Backlog
-
-* Epics
-* Features
-* User Stories
-* Tasks
-
-### Prioritization
-
-* MVP
-* Post-MVP
-* Long-term
-
-### Planning
-
-* Sprint suggestions
-* Dependencies
-* Estimates
-* Implementation order
-
----
-
-## Phase 5 — Development Companion
-
-* Code review assistance
-* Test suggestions
-* PR checklists
-* Implementation guidance
-* Deployment readiness
-* Technical debt tracking
-
----
-
-## Phase 6 — Team Features
-
-* Collaboration
-* Roles
-* Comments
-* Shared documents
-* Team project management
-
----
-
-The consistency loop (acknowledge showing up, compliment small contributions, never score by volume) is not a late add-on. It should be visible from the first project dashboard and deepen as the workflow grows.
+Consistency acknowledgement (light encouragement, no volume scoring) may return as a dashboard feature in Phase 5 polish.
 
 ## Status
 
-The roadmap is sequencing at product level. Day-to-day follow the work packages in the [phase plan](phasenplan.md).
-
+Strategic refocus complete at documentation and interface level. MVP implementation follows [TODO.md](../../TODO.md) and the [phase plan](phasenplan.md) (to be updated).

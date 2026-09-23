@@ -2,7 +2,9 @@
 
 Arbeitsplan zum Folgen. Die [Roadmap](roadmap.md) ist die Produktsicht; dieses Dokument ist die **Reihenfolge der Arbeit**. Ein Arbeitspaket nach dem anderen. Code nur nach expliziter Freigabe (`code`, `execute`, `umsetzen`, `make it so`).
 
-**Aktuell:** Phase 0, AP 1.1 und AP 1.2 sind erledigt. Als Nächstes **[AP 1.3 — Datenbank](phases/phase1/ap-1.3-datenbank.md)**.
+> **Strategische Neuausrichtung (ADR-004):** Dev-Companion ist jetzt ein Idea-to-Repo & SDLC Orchestrator. Die MVP-Priorisierung steht in [TODO.md](../../TODO.md). Alte Phasen 5 (Begleitung/Code-Review) und 6 (Team) sind aus dem Scope. Die drei Kernpakete sind `architecture-generator`, `board-sync`, `sdlc-dashboard`.
+
+**Aktuell:** Strategische Refokussierung erledigt (Paketstruktur, Modelle, Interfaces). Als Nächstes **[AP 1.3 — Datenbank](phases/phase1/ap-1.3-datenbank.md)** und MVP-P1 (Architecture Generator).
 
 Umsetzungspläne (was genau, was nötig ist): [planning/phases](phases/). Phase 1 ab 1.3: [phases/phase1](phases/phase1/).
 

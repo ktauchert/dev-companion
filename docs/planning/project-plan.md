@@ -2,21 +2,19 @@
 
 ## Motivation
 
-Most indie and solo developers do not fail from a lack of tools. They fail from starting without a line to follow.
+Most greenfield projects start with a vague idea and no structure. The developer improvises: no README, no spec, no ADRs, no board. By the time the code exists, the *why* and *what* are lost in chat history.
 
-Each project becomes an improvised process: messy folders, half-written notes, architecture in someone's head, bursts of work followed by silence. The work environment is not clean from day one, so it never quite becomes clean.
-
-Dev-Companion exists to give that line. A guideline you can actually follow. Documentation and structure set up from the start, so the project stays navigable as it grows.
-
-The second half is why people stay on that line: **consistency**.
-
-A slight gamification layer compliments the user for contributing at all — even a small portion. Progress is not scored by volume (lines, hours, ticket count). It is acknowledged by returning, by keeping style and process coherent, by moving the product forward a little at a time. Consistency in work, in style, and in progress is the product bet.
-
-The SDLC workflow (ideation → architecture → planning → delivery) is the rails. The consistency loop is why a solo developer keeps walking them.
+Dev-Companion exists to close that gap. It turns an idea into a documented repository and a structured project board — then monitors SDLC progress without touching source code.
 
 ## Vision
 
-Dev-Companion is a guideline and a companion for solo developers and small teams: a clean, documented working environment from the start, and recognition for showing up consistently — not for heroic output.
+Dev-Companion is an **Idea-to-Repo & SDLC Orchestrator** for solo developers and small teams.
+
+From a vague idea, it produces:
+
+1. A documented repository (`README`, `spec.md`, ADRs)
+2. A structured project board (milestones, epics, issues with acceptance criteria)
+3. Ongoing SDLC visibility (progress, ADR compliance, deployment guides)
 
 AI assists along the path. The user stays responsible for decisions. Artifacts stay the system of record.
 
@@ -24,54 +22,48 @@ AI assists along the path. The user stays responsible for decisions. Artifacts s
 
 ### Primary
 
-* Solo developers
-* Indie hackers
-* Freelancers
-
-People who are the process, the team, and the motivation at once.
+* Solo developers starting greenfield projects
+* Indie hackers who want structure before code
+* Freelancers onboarding new client projects
 
 ### Secondary
 
-* Small startups
-* Agencies
-* Small product teams
-
-Same need for a shared line; less acute than for one person working alone.
+* Small startups bootstrapping a new product
+* Agencies setting up client repos with documentation and boards
 
 ## Problem
 
-Software projects frequently suffer from:
+Greenfield projects frequently suffer from:
 
-* no default path — process is reinvented every time
-* a workspace that is not documented or structured from the start
-* motivation tied to how *much* was done, which punishes small honest days
-* inconsistent work, style, and progress
-* unclear requirements and uncontrolled scope
-* architecture and decisions that live only in chat or memory
+* no documented starting point — idea lives only in the developer's head
+* no architecture decisions captured before coding begins
+* no structured backlog on GitHub/GitLab — work is ad-hoc
+* no visibility into whether development follows the original architecture
+* no deployment guide when coding is done
 
 ## Solution
 
-Give the user a line to follow and a workspace that is already a project, not a blank folder.
+Three capabilities, one flow:
 
-Each important step produces a persistent, reviewable, versioned artifact (vision, requirements, architecture, ADRs, plans, checklists, retrospectives).
+| Step | Capability | Output |
+| --- | --- | --- |
+| 1 | Greenfield Architecture Seeding | `README.md`, `spec.md`, `docs/adr/` in the target repo |
+| 2 | Board Seeding | Milestones, epics, issues on GitHub/GitLab |
+| 3 | SDLC Tracking | Dashboard, ADR compliance on PRs, deployment guide |
 
-Acknowledge contribution by **consistency**, not volume:
+## What Dev-Companion is not
 
-* compliment small contributions
-* notice returning to the work
-* notice staying coherent in style and process
-* do not rank people by output size
-
-Gamification stays light. It must not shame missed days, fake activity, or turn rest into failure. Consistency is not a daily streak at all costs.
+* Not a code editor or inline autocomplete tool
+* Not a refactoring or code-generation assistant
+* Not a replacement for the developer's judgment
 
 ## Product Philosophy
 
-* Structure without a rigid methodology. The line is a default, not a religion.
+* Structure before code. Document and decide early.
 * The user remains responsible for decisions.
-* AI suggests, analyzes, and assists. It does not become the system of record.
-* Clean setup beats delayed cleanliness. Document and structure early.
-* Consistency beats intensity. Small contributions count.
-* Compliment the showing up. Do not measure worth by how much landed in a session.
+* AI suggests and generates drafts. Artifacts are the system of record.
+* Meet developers where they work: GitHub and GitLab.
+* Privacy matters: offer on-premise deployment with local LLMs.
 
 ## Architecture Principle
 
@@ -80,3 +72,5 @@ Gamification stays light. It must not shame missed days, fake activity, or turn 
 > Important SDLC artifacts are persistent and versioned.
 >
 > Domain logic should remain independent from infrastructure.
+>
+> Dev-Companion orchestrates the SDLC; it does not edit application code.

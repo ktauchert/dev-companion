@@ -1,42 +1,74 @@
 # Dev-Companion
 
-A guideline and companion for indie and solo developers: a clean, documented line to follow from day one, and recognition for **consistency** — not for how much you shipped in a sitting.
+**Idea-to-Repo & SDLC Orchestrator** for greenfield projects.
 
-The platform turns an idea into persistent, versioned engineering artifacts. AI assists. It does not replace the developer or become the system of record. Small contributions count; showing up in a coherent style is the point.
+Dev-Companion is not a code editor, inline autocomplete, or refactoring tool. It sits *before* and *around* development: turning a vague idea into a documented repository, a structured project board, and ongoing SDLC visibility.
 
-## Lifecycle
+## What it does
+
+| Capability | Description |
+| --- | --- |
+| **Greenfield Architecture Seeding** | From an idea, generate `README.md`, `spec.md`, and ADRs under `docs/adr/`, then push them into the target repo. |
+| **Board Seeding** | Transform specs and ADRs into milestones, epics, and issues (with acceptance criteria and subtasks) on GitHub or GitLab. |
+| **SDLC Tracking & Dashboard** | Monitor progress across repos and boards, check ADR compliance on pull requests, and generate deployment guides after coding. |
+| **Deployment Flexibility** | Cloud SaaS (GitHub OAuth/Apps) or on-premise Docker with local LLMs (Ollama) or cloud APIs (OpenAI, Anthropic). |
+
+## What it is not
+
+- Not inline code completion (Cursor, Copilot)
+- Not file-level refactoring or auto-editing of source code
+- Not a replacement for the developer's decisions — AI assists, artifacts are the system of record
+
+## Core flow
 
 ```text
-Idea → Ideation → Requirements → Architecture → Planning
-  → Development → Testing → Deployment → Retrospective
+Idea
+  → Architecture Generator (spec + ADRs + README)
+    → Repo push
+      → Board Sync (milestones, epics, issues)
+        → Development (in your editor)
+          → SDLC Dashboard (progress, ADR checks, deployment guide)
 ```
 
 ## Documentation
 
-Full project docs live under [`docs/`](docs/README.md).
-
 | | |
 | --- | --- |
-| Product | [Plan](docs/planning/project-plan.md) · [Phasenplan](docs/planning/phasenplan.md) · [Roadmap](docs/planning/roadmap.md) |
-| Architecture | [Overview](docs/architecture/overview.md) · [Modules](docs/architecture/domain-modules.md) · [Monorepo](docs/architecture/monorepo.md) · [Stack](docs/architecture/tech-stack.md) |
+| Architecture | [Overview v2](docs/architecture-v2.md) · [Modules](docs/architecture/domain-modules.md) · [Monorepo](docs/architecture/monorepo.md) · [Stack](docs/architecture/tech-stack.md) |
+| Planning | [MVP Roadmap](TODO.md) · [Project plan](docs/planning/project-plan.md) · [Roadmap](docs/planning/roadmap.md) |
 | Decisions | [ADRs](docs/adr/) |
 | Working here | [Development](docs/development.md) · [Contributing](CONTRIBUTING.md) · [Agents](AGENTS.md) |
 
-## Core Principles
+## Monorepo layout
 
-* External systems are accessed through explicit provider abstractions where useful.
-* SDLC artifacts are represented as persistent documents.
-* Important artifacts are versioned.
-* Business logic should remain independent from infrastructure implementations.
+```text
+packages/
+├── architecture-generator/   # Idea → spec, ADRs, repo seeding
+├── board-sync/               # Spec/ADRs → GitHub/GitLab board
+├── sdlc-dashboard/           # Progress, ADR compliance, deployment guides
+├── shared/                   # Core data models (ProjectSpec, ADR, …)
+├── ai/                       # LLM provider abstraction
+├── documents/                # Artifact persistence
+├── database/                 # Drizzle schema & migrations
+├── auth/                     # Authentication
+└── validation/               # Response validation
+
+apps/
+├── web/                      # SDLC dashboard SPA
+└── api/                      # NestJS orchestration API
+```
+
+## Deployment modes
+
+| Mode | Auth | LLM | Target users |
+| --- | --- | --- | --- |
+| **Cloud SaaS** | GitHub OAuth / GitHub App | OpenAI, Anthropic | Solo devs, small teams |
+| **On-Premise Docker** | Local / self-hosted | Ollama, OpenAI, Anthropic | Privacy-first, enterprise |
 
 ## Working with Cursor
 
-This repo is a **companion-first** workspace. Cursor Agent is used to interpret, discuss and document before any product code is written.
+This repo uses a **companion-first** workflow for its own development. Product code changes require an explicit trigger (`code`, `execute`, `umsetzen`, `make it so`). Documentation may always be updated.
 
-Project code is changed only when explicitly requested with `code`, `execute`, `umsetzen`, or `make it so`. Documentation may always be updated so it stays aligned with discussions and decisions.
+## Status
 
-## Current Status
-
-Work in Progress.
-
-The project is currently in architecture and foundation. Product implementation starts only after an explicit coding request.
+Strategic refocus in progress — core module structure and interfaces are defined; MVP implementation follows [TODO.md](TODO.md).

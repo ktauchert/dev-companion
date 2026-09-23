@@ -1,7 +1,7 @@
 {
   "name": "dev-companion",
   "version": "1.0.0",
-  "description": "A guideline and companion for indie and solo developers: a clean, documented line to follow from day one, and recognition for **consistency** — not for how much you shipped in a sitting.",
+  "description": "Idea-to-Repo & SDLC Orchestrator for greenfield projects — seed docs, sync boards, track progress.",
   "homepage": "https://github.com/ktauchert/dev-companion#readme",
   "workspaces": [
     "apps/*",

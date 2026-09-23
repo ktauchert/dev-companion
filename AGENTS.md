@@ -54,17 +54,26 @@ Do not invent implementation details in docs that were not agreed. Record what w
 
 ## Project snapshot
 
-**Dev-Companion** gives indie and solo developers a line to follow: a clean, documented working environment from the start, plus light acknowledgement of **consistency** (showing up, coherent style and progress) rather than output volume. The SDLC path (ideation → requirements → architecture → planning → development → testing → deployment → retrospective) is the rails. AI assists; it is not the system of record. Artifacts are persistent and versioned. External systems sit behind provider abstractions where that is useful.
+**Dev-Companion** is an **Idea-to-Repo & SDLC Orchestrator** for greenfield projects. It is not a code editor or inline autocomplete tool.
 
-Planned shape (see `docs/architecture/monorepo.md`):
+Three core capabilities:
 
-- apps: Vite + TanStack Router web (SPA), NestJS API
-- packages: domain modules plus shared, database, auth, AI, documents, validation
+1. **architecture-generator** — idea → README, spec.md, ADRs → push to target repo
+2. **board-sync** — artifacts → GitHub/GitLab milestones, epics, issues
+3. **sdlc-dashboard** — progress tracking, ADR compliance on PRs, deployment guides
+
+AI assists; artifacts are the system of record. External systems (LLM, GitHub, GitLab) sit behind provider abstractions (ADR-002).
+
+Planned shape (see `docs/architecture/monorepo.md` and `docs/architecture-v2.md`):
+
+- apps: Vite + TanStack Router web (SDLC dashboard SPA), NestJS API
+- packages: architecture-generator, board-sync, sdlc-dashboard, shared, ai, documents, database, auth, validation
 - modular monolith, not microservices by default
+- deployment: Cloud SaaS (GitHub OAuth) or on-premise Docker (Ollama)
 
-Stack (see `docs/architecture/tech-stack.md`): TypeScript, Vite, React, TanStack Router, Tailwind, shadcn/ui, NestJS, PostgreSQL, Drizzle, Better Auth, npm workspaces, OpenAI first with a provider boundary.
+Stack (see `docs/architecture/tech-stack.md`): TypeScript, Vite, React, TanStack Router, Tailwind, shadcn/ui, NestJS, PostgreSQL, Drizzle, Better Auth, npm workspaces, OpenAI/Ollama with a provider boundary.
 
-Current status: architecture / foundation; implementation of the codebase is not implied by conversation alone.
+MVP roadmap: `TODO.md`. Current status: strategic refocus complete at doc and interface level.
 
 Read these before proposing structural change: `docs/architecture/overview.md`, `docs/architecture/domain-modules.md`, `docs/adr/`.
 

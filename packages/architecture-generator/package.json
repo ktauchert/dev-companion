@@ -1,5 +1,5 @@
 {
-  "name": "@dev-companion/ai",
+  "name": "@dev-companion/architecture-generator",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -7,5 +7,9 @@
   "types": "./src/index.ts",
   "exports": {
     ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@dev-companion/ai": "*",
+    "@dev-companion/shared": "*"
   }
 }
