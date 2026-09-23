@@ -5,9 +5,11 @@ Index of project documents. Root stays lean: `README.md`, `AGENTS.md`, `CONTRIBU
 ## Planning
 
 * [Project plan](planning/project-plan.md) — motivation, users, problem, solution
+* [Product direction](planning/product-direction.md) — refined MVP → SaaS/On-Prem phases
+* [User journey](planning/user-journey.md) — end-to-end flow (mermaid)
 * [Phase plan](planning/phasenplan.md) — horizontal phases and work packages (follow this)
 * [Implementation plans](planning/phases/) — what to do per work package (Phase 1 from AP 1.3)
-* [Roadmap](planning/roadmap.md) — product phases
+* [Roadmap](planning/roadmap.md) — MVP milestones M1–M4 and product phases
 
 ## Architecture
 
@@ -15,6 +17,7 @@ Index of project documents. Root stays lean: `README.md`, `AGENTS.md`, `CONTRIBU
 * [Domain modules](architecture/domain-modules.md)
 * [Monorepo](architecture/monorepo.md)
 * [Tech stack](architecture/tech-stack.md)
+* [HINWEIS — planned code changes](architecture/HINWEIS.md)
 
 ## Decisions
 

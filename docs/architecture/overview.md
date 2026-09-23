@@ -16,20 +16,24 @@ Microservices are not introduced unless there is a concrete architectural reason
                          ▼
                     NestJS API
                          │
-              ┌──────────┼──────────┐
-              │          │          │
-           Ideation  Architecture Planning
-              │          │          │
-              └──────────┼──────────┘
+     ┌────────────┬──────┴──────┬────────────┐
+     │            │             │            │
+  Ideation   Architecture   Planning   SDLC Dashboard
+     │            │             │            │
+     └────────────┴──────┬──────┴────────────┘
                          │
                      Documents
                          │
-              ┌──────────┼──────────┐
-              │          │          │
-           Database      AI        Auth
-              │          │          │
-          PostgreSQL   Provider   Provider
+              ┌──────────┼──────────┬──────────┐
+              │          │          │          │
+           Database      AI        Auth    Board Sync
+              │          │          │          │
+          PostgreSQL   Provider   Provider  GitProvider
+                                              │
+                                         GitHub / GitLab
 ```
+
+User journey: idea → spec & ADRs → git push → board seeding → free coding → tracking & compliance. See [user-journey](../planning/user-journey.md).
 
 ## Application Boundaries
 

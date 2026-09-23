@@ -36,14 +36,30 @@ The authentication layer is designed behind an application boundary so that alte
 
 Initial:
 
-* OpenAI
+* OpenAI (ideation interview, spec, ADR chains, compliance checks)
 
 Planned / supported by architecture:
 
-* Ollama
+* Ollama / LM Studio (On-Prem; full decoupling from cloud LLMs)
 * Azure OpenAI
 * Anthropic
 * AWS Bedrock
+
+## Git & project boards
+
+MVP:
+
+* GitHub REST/GraphQL via Personal Access Token (PAT)
+* GitLab via same `GitProviderAdapter` boundary
+* PAT polling for dashboard updates (no webhooks required)
+
+Later (SaaS):
+
+* GitHub App with webhooks for real-time updates
+
+## Billing (later)
+
+* Stripe for B2B Pro features (team accounts, extended KI quotas)
 
 ## Package manager
 

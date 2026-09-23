@@ -10,6 +10,23 @@ apps/
 └── api/                    # NestJS
 
 packages/
+├── shared/                 # Core types: ProjectSpec, ADR, BoardEntity
+├── database/
+├── auth/
+├── ai/                     # LLMProvider (OpenAI; later Ollama)
+├── ideation/               # KI interview, spec.md generation
+├── architecture/           # Today; target name: architecture-generator (ADR engine)
+├── board-sync/             # Planned — GitProviderAdapter, GitHub/GitLab
+├── sdlc-dashboard/         # Planned — status, polling, compliance (or extend planning + web)
+├── planning/
+├── documents/
+└── validation/
+```
+
+`board-sync` and `sdlc-dashboard` are **not yet in the repo**. See [HINWEIS.md](HINWEIS.md) before adding or renaming packages.
+
+```text
+packages/ (current)
 ├── shared/
 ├── database/
 ├── auth/
