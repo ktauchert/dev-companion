@@ -2,7 +2,7 @@
 
 Arbeitsplan zum Folgen. Die [Roadmap](roadmap.md) und [Produktrichtung](product-direction.md) beschreiben die verfeinerte Ziel-Sicht (MVP M1–M4: Spec → Git → Board → Tracking). **Dieses Dokument** ist die **operative Reihenfolge der Arbeit**. Ein Arbeitspaket nach dem anderen. Code nur nach expliziter Freigabe (`code`, `execute`, `umsetzen`, `make it so`).
 
-**Aktuell:** Phase 0, AP 1.1 und AP 1.2 sind erledigt. Als Nächstes **[AP 1.3 — Datenbank](phases/phase1/ap-1.3-datenbank.md)**.
+**Aktuell:** Phase 0, AP 1.1 und AP 1.2 sind erledigt. Als Nächstes **[#38 AP 1.2b — Fastify Migration](https://github.com/ktauchert/dev-companion/issues/38)**, danach **[#3 AP 1.3 — Datenbank](phases/phase1/ap-1.3-datenbank.md)**.
 
 Nach Phase 1 Fundament folgen die MVP-Meilensteine aus der [Produktrichtung](product-direction.md#mvp-meilensteine-priorisiert). Neue Fähigkeiten (Board-Sync, PAT-Polling) ergänzen die Phasen 2–5 — sie ersetzen die bestehenden Arbeitspakete nicht ohne bewusste Umbuchung. Code-Hinweise: [architecture/HINWEIS.md](../architecture/HINWEIS.md).
 
@@ -56,7 +56,7 @@ Diskussion, dann Docs. Kein Produktcode.
 
 ## Phase 1 — Fundament
 
-**Status:** in Arbeit — AP 1.1 und 1.2 erledigt, **AP 1.3** als Nächstes.
+**Status:** in Arbeit — AP 1.1 und 1.2 erledigt, **#38 Fastify Migration** dann **#3 Datenbank** als Nächstes.
 
 ### Warum
 
@@ -213,88 +213,83 @@ Nur bauen, was ein zweiter Mensch wirklich braucht. Keine vorauseilende Multi-Te
 
 ---
 
-## GitHub (wie GitLab Issues / Milestones / Epics)
+## GitHub (Issues / Milestones)
 
-> **Migration ausstehend:** Die Tabelle unten ist die **alte** Struktur (Phase 2–6 horizontal). Ziel und Mapping zur [Produktrichtung](product-direction.md): **[github-backlog-migration.md](github-backlog-migration.md)** — dort auch der Agent-Prompt für `gh`.
-
-Ja. GitHub hat ein Issue-System. Es ist GitLab sehr ähnlich, die Namen weichen ab.
+Backlog an [Produktrichtung](product-direction.md) und [github-backlog-migration.md](github-backlog-migration.md) ausgerichtet. Ein Arbeitspaket = ein Issue = ein Branch = ein PR.
 
 | GitLab | GitHub | Bei uns |
 | --- | --- | --- |
-| Milestone | **Milestone** | eine Phase (z. B. Phase 1 — Fundament) |
-| Epic | **Parent-Issue** + Sub-Issues (Issue-Type „Epic“ nur in Organisationen) | optional ein Issue pro Phase, Kinder = Arbeitspakete |
-| Issue | **Issue** | ein Arbeitspaket (AP 1.1, AP 1.2, …) |
-| Merge Request | **Pull Request** | Branch der AP-Issue → `main` |
-| Branch aus Issue | Issue → **Create a branch** | ein Branch pro Arbeitspaket |
+| Milestone | **Milestone** | MVP-Meilenstein oder Phase 1 Fundament |
+| Issue | **Issue** | ein Arbeitspaket |
+| Merge Request | **Pull Request** | Branch der Issue → `main` |
 
-Für ein Solo-Repo reicht:
+### Milestones
 
-1. **Milestones** = Phasen 1–6 (Phase 0 nicht, die ist erledigt).
-2. **Issues** = Arbeitspakete, jeweils dem Milestone der Phase zugeordnet.
-3. Am Issue **Create a branch** (z. B. `ap-1-1-monorepo`), darauf arbeiten, **PR nach `main`**, Issue schließen.
+| Milestone | Fokus | Issues |
+| --- | --- | --- |
+| [Phase 1 — Fundament](https://github.com/ktauchert/dev-companion/milestone/1) | Monorepo, Docker, Auth, Projekte, Docs, Dashboard, CI | #1–#2 ✓, **#38**, #3–#8 |
+| [Foundation — Datenmodell & Provider](https://github.com/ktauchert/dev-companion/milestone/7) | Core Types, GitProviderAdapter | #39–#40 |
+| [M1 — Ideation & Spec](https://github.com/ktauchert/dev-companion/milestone/2) | Interview → spec.md → ADRs | #11, #9–#10, #12, #15–#16 |
+| [M2 — Git Push](https://github.com/ktauchert/dev-companion/milestone/8) | PAT → Repo, Artefakte pushen | #41 |
+| [M3 — Board Seeding](https://github.com/ktauchert/dev-companion/milestone/4) | Breakdown, Sync, Dry-Run | #18, #42–#44 |
+| [M4 — SDLC Tracking](https://github.com/ktauchert/dev-companion/milestone/5) | Polling, Dashboard, Compliance, Deploy-Guide | #45–#47, #24 |
+| [Phase 4 — Production](https://github.com/ktauchert/dev-companion/milestone/6) | GitHub App, Stripe, On-Prem, lokale KI | #26–#28, #48–#51 |
 
-Parent-Issue pro Phase nur, wenn du die Phase als einen Fortschrittsbalken sehen willst. Brauchst du nicht, solange das Milestone die Pakete bündelt. GitHub Projects (Board) ist optional; Milestones + Issues reichen.
+Geschlossen: Milestone „Phase 3 — Architektur“ (Issues nach M1 umgebucht). Label `later`: [#23](https://github.com/ktauchert/dev-companion/issues/23).
 
-Ein Arbeitspaket = ein Issue = ein Branch = ein PR. Nicht eine Phase auf einem Branch leben lassen — sonst wird `main` lange leer und Reviews unmöglich.
-
-Angelegt in https://github.com/ktauchert/dev-companion: 6 Milestones, Issues **#1–#29**.
-
-### Konkrete Abbildung
-
-Keine Parent-Issues. Die Phase ist das Milestone, das Arbeitspaket ist das Issue. Phase 0 bleibt nur in den Docs (erledigt, kein GitHub-Milestone).
-
-**Milestones:** [Phase 1 — Fundament](https://github.com/ktauchert/dev-companion/milestone/1) · [Phase 2](https://github.com/ktauchert/dev-companion/milestone/2) · [Phase 3](https://github.com/ktauchert/dev-companion/milestone/3) · [Phase 4](https://github.com/ktauchert/dev-companion/milestone/4) · [Phase 5](https://github.com/ktauchert/dev-companion/milestone/5) · [Phase 6](https://github.com/ktauchert/dev-companion/milestone/6)
-
-**Issues:**
+### Issues (offen)
 
 | Issue | Titel | Milestone | Branch |
 | --- | --- | --- | --- |
-| [#1](https://github.com/ktauchert/dev-companion/issues/1) | AP 1.1 — Monorepo | Phase 1 — Fundament | `ap-1-1-monorepo` |
-| [#2](https://github.com/ktauchert/dev-companion/issues/2) | AP 1.2 — Lokal-Infra | Phase 1 — Fundament | `ap-1-2-lokal-infra` |
+| [#38](https://github.com/ktauchert/dev-companion/issues/38) | AP 1.2b — Fastify Migration | Phase 1 — Fundament | `ap-1-2b-fastify-migration` |
 | [#3](https://github.com/ktauchert/dev-companion/issues/3) | AP 1.3 — Datenbank | Phase 1 — Fundament | `ap-1-3-datenbank` |
 | [#4](https://github.com/ktauchert/dev-companion/issues/4) | AP 1.4 — Auth | Phase 1 — Fundament | `ap-1-4-auth` |
 | [#5](https://github.com/ktauchert/dev-companion/issues/5) | AP 1.5 — Projekte | Phase 1 — Fundament | `ap-1-5-projekte` |
 | [#6](https://github.com/ktauchert/dev-companion/issues/6) | AP 1.6 — Dokumentenkern | Phase 1 — Fundament | `ap-1-6-dokumentenkern` |
 | [#7](https://github.com/ktauchert/dev-companion/issues/7) | AP 1.7 — Dashboard | Phase 1 — Fundament | `ap-1-7-dashboard` |
 | [#8](https://github.com/ktauchert/dev-companion/issues/8) | AP 1.8 — Qualität | Phase 1 — Fundament | `ap-1-8-qualitaet` |
-| [#9](https://github.com/ktauchert/dev-companion/issues/9) | AP 2.1 — Wizard-Schritte | Phase 2 — Ideation | `ap-2-1-wizard-schritte` |
-| [#10](https://github.com/ktauchert/dev-companion/issues/10) | AP 2.2 — Artefakte aus Ideation | Phase 2 — Ideation | `ap-2-2-ideation-artefakte` |
-| [#11](https://github.com/ktauchert/dev-companion/issues/11) | AP 2.3 — KI-Provider | Phase 2 — Ideation | `ap-2-3-ki-provider` |
-| [#12](https://github.com/ktauchert/dev-companion/issues/12) | AP 2.4 — KI-Hilfe Ideation | Phase 2 — Ideation | `ap-2-4-ki-hilfe-ideation` |
-| [#13](https://github.com/ktauchert/dev-companion/issues/13) | AP 2.5 — Progress Ideation | Phase 2 — Ideation | `ap-2-5-progress-ideation` |
-| [#14](https://github.com/ktauchert/dev-companion/issues/14) | AP 3.1 — Stack-Empfehlung | Phase 3 — Architektur | `ap-3-1-stack-empfehlung` |
-| [#15](https://github.com/ktauchert/dev-companion/issues/15) | AP 3.2 — Architektur-Doku | Phase 3 — Architektur | `ap-3-2-architektur-doku` |
-| [#16](https://github.com/ktauchert/dev-companion/issues/16) | AP 3.3 — ADRs | Phase 3 — Architektur | `ap-3-3-adrs` |
-| [#17](https://github.com/ktauchert/dev-companion/issues/17) | AP 3.4 — Progress Architektur | Phase 3 — Architektur | `ap-3-4-progress-architektur` |
-| [#18](https://github.com/ktauchert/dev-companion/issues/18) | AP 4.1 — Backlog-Modell | Phase 4 — Planung | `ap-4-1-backlog-modell` |
-| [#19](https://github.com/ktauchert/dev-companion/issues/19) | AP 4.2 — Priorisierung | Phase 4 — Planung | `ap-4-2-priorisierung` |
-| [#20](https://github.com/ktauchert/dev-companion/issues/20) | AP 4.3 — Reihenfolge | Phase 4 — Planung | `ap-4-3-reihenfolge` |
-| [#21](https://github.com/ktauchert/dev-companion/issues/21) | AP 4.4 — Progress Planung | Phase 4 — Planung | `ap-4-4-progress-planung` |
-| [#22](https://github.com/ktauchert/dev-companion/issues/22) | AP 5.1 — Task-Begleitung | Phase 5 — Begleitung | `ap-5-1-task-begleitung` |
-| [#23](https://github.com/ktauchert/dev-companion/issues/23) | AP 5.2 — Schulden | Phase 5 — Begleitung | `ap-5-2-schulden` |
-| [#24](https://github.com/ktauchert/dev-companion/issues/24) | AP 5.3 — Deployment-Bereitschaft | Phase 5 — Begleitung | `ap-5-3-deployment-bereitschaft` |
-| [#25](https://github.com/ktauchert/dev-companion/issues/25) | AP 5.4 — Progress Umsetzung | Phase 5 — Begleitung | `ap-5-4-progress-umsetzung` |
-| [#26](https://github.com/ktauchert/dev-companion/issues/26) | AP 6.1 — Teilen | Phase 6 — Team | `ap-6-1-teilen` |
-| [#27](https://github.com/ktauchert/dev-companion/issues/27) | AP 6.2 — Rollen | Phase 6 — Team | `ap-6-2-rollen` |
-| [#28](https://github.com/ktauchert/dev-companion/issues/28) | AP 6.3 — Kommentare | Phase 6 — Team | `ap-6-3-kommentare` |
-| [#29](https://github.com/ktauchert/dev-companion/issues/29) | AP 6.4 — Progress Team | Phase 6 — Team | `ap-6-4-progress-team` |
+| [#39](https://github.com/ktauchert/dev-companion/issues/39) | F0.1 — Core Types | Foundation | — |
+| [#40](https://github.com/ktauchert/dev-companion/issues/40) | F0.2 — GitProviderAdapter | Foundation | — |
+| [#11](https://github.com/ktauchert/dev-companion/issues/11) | M1.0 — LLMProvider | M1 — Ideation & Spec | `ap-2-3-ki-provider` |
+| [#9](https://github.com/ktauchert/dev-companion/issues/9) | M1.1 — KI-Interview / Wizard | M1 | `ap-2-1-wizard-schritte` |
+| [#10](https://github.com/ktauchert/dev-companion/issues/10) | M1.2 — spec.md Generierung | M1 | `ap-2-2-ideation-artefakte` |
+| [#12](https://github.com/ktauchert/dev-companion/issues/12) | M1.3 — KI-Hilfe im Interview | M1 | `ap-2-4-ki-hilfe-ideation` |
+| [#15](https://github.com/ktauchert/dev-companion/issues/15) | M1.4 — Architektur-Doku aus Spec | M1 | `ap-3-2-architektur-doku` |
+| [#16](https://github.com/ktauchert/dev-companion/issues/16) | M1.5 — ADR Engine | M1 | `ap-3-3-adrs` |
+| [#41](https://github.com/ktauchert/dev-companion/issues/41) | M2.1 — GitHub PAT Push | M2 — Git Push | — |
+| [#18](https://github.com/ktauchert/dev-companion/issues/18) | M3.1 — Internes Backlog / Dry-Run Modell | M3 — Board Seeding | `ap-4-1-backlog-modell` |
+| [#42](https://github.com/ktauchert/dev-companion/issues/42) | M3.2 — Task Breakdown Engine | M3 | — |
+| [#43](https://github.com/ktauchert/dev-companion/issues/43) | M3.3 — GitHub Board Sync | M3 | — |
+| [#44](https://github.com/ktauchert/dev-companion/issues/44) | M3.4 — Board Dry-Run | M3 | — |
+| [#45](https://github.com/ktauchert/dev-companion/issues/45) | M4.1 — PAT-Polling | M4 — SDLC Tracking | — |
+| [#46](https://github.com/ktauchert/dev-companion/issues/46) | M4.2 — SDLC Dashboard (extern) | M4 | — |
+| [#47](https://github.com/ktauchert/dev-companion/issues/47) | M4.3 — ADR-Compliance-Check | M4 | — |
+| [#24](https://github.com/ktauchert/dev-companion/issues/24) | M4.4 — Deployment-Guide Generator | M4 | `ap-5-3-deployment-bereitschaft` |
+| [#26](https://github.com/ktauchert/dev-companion/issues/26) | P4.1 — Projekt teilen | Phase 4 — Production | `ap-6-1-teilen` |
+| [#27](https://github.com/ktauchert/dev-companion/issues/27) | P4.2 — Rollen | Phase 4 | `ap-6-2-rollen` |
+| [#28](https://github.com/ktauchert/dev-companion/issues/28) | P4.3 — Kommentare an Artefakten | Phase 4 | `ap-6-3-kommentare` |
+| [#48](https://github.com/ktauchert/dev-companion/issues/48) | P4.4 — GitHub App + Webhooks | Phase 4 | — |
+| [#49](https://github.com/ktauchert/dev-companion/issues/49) | P4.5 — Stripe Billing | Phase 4 | — |
+| [#50](https://github.com/ktauchert/dev-companion/issues/50) | P4.6 — On-Prem Docker/Helm | Phase 4 | — |
+| [#51](https://github.com/ktauchert/dev-companion/issues/51) | P4.7 — Ollama / LM Studio | Phase 4 | — |
+| [#23](https://github.com/ktauchert/dev-companion/issues/23) | AP 5.2 — Schulden (`later`) | — | `ap-5-2-schulden` |
 
-**Ablauf am ersten Ticket:**
+Geschlossene Issues #1–#2, #13–#14, #17, #19–#22, #25, #29 (Label `superseded`). Details: [github-backlog-migration.md](github-backlog-migration.md).
+
+### Ablauf am nächsten Ticket
 
 ```text
-[#1 AP 1.1 — Monorepo](https://github.com/ktauchert/dev-companion/issues/1)
-  → Create a branch  (ap-1-1-monorepo)
+[#38 AP 1.2b — Fastify Migration](https://github.com/ktauchert/dev-companion/issues/38)
+  → Create a branch  (ap-1-2b-fastify-migration)
   → umsetzen
-  → Pull Request „AP 1.1 — Monorepo“ → main
+  → Pull Request → main
   → mergen, Issue schließen
-  → Milestone Phase 1 zeigt 1 / 8
+  → [#3 AP 1.3 — Datenbank](https://github.com/ktauchert/dev-companion/issues/3)
 ```
-
-Gearbeitet wird nur am aktuellen Paket: **[#3 AP 1.3 — Datenbank](https://github.com/ktauchert/dev-companion/issues/3)**. Plan: [phases/phase1/ap-1.3-datenbank.md](phases/phase1/ap-1.3-datenbank.md).
 
 ## So folgen
 
-1. Nur das aktuelle Arbeitspaket: **[#3 AP 1.3 — Datenbank](https://github.com/ktauchert/dev-companion/issues/3)**.
+1. Nur das aktuelle Arbeitspaket: **[#38 AP 1.2b — Fastify Migration](https://github.com/ktauchert/dev-companion/issues/38)**, danach **[#3 AP 1.3 — Datenbank](https://github.com/ktauchert/dev-companion/issues/3)**.
 2. Zuerst in Docs klären, wenn etwas fehlt (Modell, Grenze, ADR).
 3. Dann bewusst umsetzen lassen — idealerweise auf dem Branch der zugehörigen Issue.
 4. Fertig-wenn prüfen, PR mergen, Issue schließen, dann das nächste Paket.
