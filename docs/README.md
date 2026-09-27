@@ -14,6 +14,7 @@ Index of project documents. Root stays lean: `README.md`, `AGENTS.md`, `CONTRIBU
 ## Architecture
 
 * [Overview](architecture/overview.md) — modular monolith, boundaries, dependency rule
+* [Architecture diagram](architecture/diagram.md) — Mermaid: system, monorepo, API layers, MVP flow
 * [Domain modules](architecture/domain-modules.md)
 * [Monorepo](architecture/monorepo.md)
 * [Tech stack](architecture/tech-stack.md)
