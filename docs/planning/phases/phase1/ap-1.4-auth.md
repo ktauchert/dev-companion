@@ -17,7 +17,7 @@ Projektbesitz hier nur soweit: es gibt eine User-Identität, an der `project.own
 ## In diesem AP
 
 * `packages/auth`: Grenze + Better-Auth-Adapter (nicht Auth-SDK in der Domain)
-* Better Auth an Nest hängen (Session-Cookie über die API)
+* Better Auth an die Fastify-API hängen (Session-Cookie über die API)
 * Tabellen, die Better Auth zusätzlich braucht — mindestens **account** und **verification** — per neuer Drizzle-Migration in `packages/database`
 * Register + Login in der SPA (Tailwind ist da; **shadcn/ui** anlegen, sobald Form-Komponenten gebraucht werden)
 * CORS + Credentials: Browser `localhost:5173` → API `localhost:3000`
@@ -33,7 +33,7 @@ OAuth/Social Login, Magic Link, SMTP/E-Mail-Verifikation als Produktfeature, Cog
 | --- | --- |
 | User/Session-Schema | AP 1.3, an Better-Auth-Drizzle angelehnt |
 | `@dev-companion/auth` | leere Package-Hülle aus AP 1.1 |
-| Stack | Better Auth, Drizzle-Adapter, Nest |
+| Stack | Better Auth, Drizzle-Adapter, Fastify |
 | SPA | Vite, TanStack Router, noch ohne Login-Routen |
 | Env | `POSTGRES_URL`; Better-Auth-Secret (Name beim Umsetzen festlegen, nicht committen) |
 
@@ -55,7 +55,7 @@ Web speichert keine Passwörter und redet nicht mit Postgres.
 ```text
 1. Better Auth + Drizzle-Adapter; Schema-Diff gegen 1.3-Tabellen
 2. Migration für fehlende Auth-Tabellen
-3. Nest: Handler, Cookie, CORS für die Vite-Origin
+3. API: Route/Handler, Cookie, CORS für die Vite-Origin
 4. packages/auth exportiert die Grenze, API nutzt den Adapter
 5. SPA: Register, Login, Logout, „eingeloggt bleiben“ (Cookie)
 6. Nachweis: Konto anlegen, Reload, Session da; unauth auf Schutz → 401

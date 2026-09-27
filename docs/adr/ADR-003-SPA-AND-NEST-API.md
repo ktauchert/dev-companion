@@ -1,8 +1,8 @@
-# ADR-003: Two apps — Vite SPA with TanStack Router, NestJS API
+# ADR-003: Two apps — Vite SPA with TanStack Router, API backend
 
 ## Status
 
-Accepted
+Accepted — **API framework** superseded by [ADR-004](ADR-004-FASTIFY-API.md) (Fastify replaces NestJS). This record remains authoritative for the **two-app split** and frontend choice.
 
 This record replaces the earlier, web-only wording of ADR-003. The decision is the **application split**, not a frontend library in isolation.
 
@@ -21,7 +21,7 @@ NestJS was never challenged the way Next.js was. It is still an architectural ch
 Two applications:
 
 1. **`apps/web`** — Vite + React **SPA**, routed with **TanStack Router**. UI, client state, client routing. No domain logic, auth rules, or persistence.
-2. **`apps/api`** — **NestJS**. HTTP, auth handling, application orchestration, domain modules, provider adapters (ADR-002).
+2. **`apps/api`** — **Fastify + TypeScript** (see [ADR-004](ADR-004-FASTIFY-API.md); was NestJS in AP 1.1 scaffold). HTTP, auth handling, application orchestration, domain services, provider adapters (ADR-002).
 
 The web app calls the API. There is one backend.
 

@@ -23,7 +23,8 @@ Index of project documents. Root stays lean: `README.md`, `AGENTS.md`, `CONTRIBU
 
 * [ADR-001 Modular monolith](adr/ADR-001-MODULAR-MONOLITH.md)
 * [ADR-002 Provider architecture](adr/ADR-002-PROVIDER-ARCHITECTURE.md)
-* [ADR-003 Two apps: Vite/TanStack SPA and NestJS API](adr/ADR-003-SPA-AND-NEST-API.md)
+* [ADR-003 Two apps: Vite/TanStack SPA and API backend](adr/ADR-003-SPA-AND-NEST-API.md)
+* [ADR-004 Fastify instead of NestJS](adr/ADR-004-FASTIFY-API.md)
 
 ## Working here
 

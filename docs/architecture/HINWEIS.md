@@ -1,6 +1,23 @@
 # HINWEIS — geplante Code-Anpassungen
 
-Dokumentations-Stand aus [product-direction.md](../planning/product-direction.md). **Noch nicht umgesetzt.** Orientierung für spätere Arbeitspakete; nichts hier automatisch refactoren.
+Dokumentations-Stand aus [product-direction.md](../planning/product-direction.md) und [ADR-004](../adr/ADR-004-FASTIFY-API.md). **Noch nicht umgesetzt**, sofern nicht explizit mit `code` beauftragt. Orientierung für spätere Arbeitspakete; nichts hier automatisch refactoren.
+
+---
+
+## Nest → Fastify (ADR-004)
+
+**Entschieden, nicht migriert.** `apps/api` enthält noch den Nest-AP-1.1-Scaffold.
+
+Bei Umsetzung (`code`):
+
+1. Nest-Dependencies und `-Module`/Decorators aus `apps/api` entfernen.
+2. Fastify bootstrap (`src/server.ts` oder `src/app.ts`), Plugin-Layout: routes → services → providers.
+3. Health-Route (`GET /health`) als Minimal-Nachweis.
+4. `packages/*` unverändert importierbar halten — Domain-Logik nicht in Route-Handler.
+5. Ports: Web **5173**, API **3000** (wie bisher).
+6. Root-`package.json` Scripts `dev:api` / `build:api` anpassen.
+
+Express wäre gleichwertig; ADR-004 nennt Fastify.
 
 ---
 
@@ -41,7 +58,7 @@ GitProviderAdapter — board-sync (implementiert: GitHubProvider, GitLabProvider
 | --- | --- | --- |
 | Web | Ideation-Wizard-Routes | Interview-UI, Spec-Vorschau, Dry-Run Board |
 | Web | Dashboard-Routes | Milestone-Fortschritt, PR/Commit-Übersicht (AP 1.7 erweitern) |
-| API | NestJS-Module pro Package | `BoardSyncModule`, Polling-Job oder manueller Refresh-Endpoint |
+| API | Fastify routes + services pro Domain | `board-sync` service, Polling-Job oder manueller Refresh-Endpoint |
 | API | Secrets / Config | PAT speichern (verschlüsselt); später GitHub App Credentials |
 
 ---

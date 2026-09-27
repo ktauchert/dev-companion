@@ -64,7 +64,7 @@ Die Linie muss **betretbar** sein: einloggen, Projekt anlegen, Dashboard sehen, 
 
 ### Was
 
-Laufendes lokales System: Monorepo (Vite/TanStack Router + NestJS), Docker (PostgreSQL), Auth, Projekte mit Besitz, Dokumentenspeicher (noch ohne Wizard), Dashboard mit leichtem Progress-Hinweis. CI, das zumindest installiert und typecheckt.
+Laufendes lokales System: Monorepo (Vite/TanStack Router + Fastify API — [ADR-004](../adr/ADR-004-FASTIFY-API.md)), Docker (PostgreSQL), Auth, Projekte mit Besitz, Dokumentenspeicher (noch ohne Wizard), Dashboard mit leichtem Progress-Hinweis. CI, das zumindest installiert und typecheckt.
 
 ### Wie
 

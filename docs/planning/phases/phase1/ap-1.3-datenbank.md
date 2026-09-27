@@ -12,14 +12,14 @@ Kein zweiter Datenbankserver. Der Server läuft. Hier entstehen **Tabellen** in 
 
 ## Ziel
 
-`packages/database` ist das Schema- und Zugriffs-Paket. Die Nest-API kann den Client importieren. Web spricht Postgres nicht an.
+`packages/database` ist das Schema- und Zugriffs-Paket. Die Fastify-API kann den Client importieren. Web spricht Postgres nicht an.
 
 ## In diesem AP
 
 * Drizzle ORM + drizzle-kit + Postgres-Treiber im Workspace-Paket `@dev-companion/database`
 * Schema: **user**, **session**, **project**, **document**
 * Generierte Migration committen, `migrate` gegen `POSTGRES_URL`
-* Dünnes Nest-`DatabaseModule`: Client bereitstellen, Nachweis `SELECT 1`
+* Dünner DB-Setup in der API: Client bereitstellen, Nachweis `SELECT 1` (z. B. `GET /health` mit DB-Check)
 
 ## Nicht in diesem AP
 
@@ -36,7 +36,7 @@ Login (1.4), Projekt-CRUD (1.5), Dokument-Versionen (1.6), Dashboard (1.7), CI (
 | Host-Port | **5454** (`5454:5432`), weil 5432 lokal belegt war |
 | URL | `postgresql://devcompanion:devcompanion@localhost:5454/devcompanion` |
 | Package-Hülle | `packages/database/package.json` existiert (AP 1.1) |
-| API | Nest in `apps/api`, noch ohne DB |
+| API | Fastify in `apps/api`, noch ohne DB (Nest-Scaffold ggf. vorher migrieren — ADR-004) |
 
 Compose und `.env.example` müssen zur URL passen. Details: [AP 1.2 Nachlese](../../../lessons-learned/phase-1/ap2.md).
 
@@ -91,7 +91,7 @@ Root-Scripts (Namen frei): `db:generate`, `db:migrate` über das Workspace-Paket
 6. drizzle-kit generate
 7. drizzle-kit migrate                         # Fertig-wenn
 8. prüfen: \dt oder Studio — vier Tabellen
-9. Nest: Workspace-Dependency, Module, SELECT 1
+9. API: Workspace-Dependency auf `packages/database`, Route/Service, SELECT 1
 ```
 
 Code erst nach coding-Trigger.
@@ -99,7 +99,7 @@ Code erst nach coding-Trigger.
 ## Offene Punkte (nicht blockierend)
 
 * Treiber: `postgres` (postgres.js) vs. `pg` — beides geht mit Drizzle; eine Wahl beim Umsetzen, kein ADR nötig.
-* Wie Nest `POSTGRES_URL` lädt (`dotenv` / `@nestjs/config`) — lokal, solange die URL ankommt.
+* Wie die API `POSTGRES_URL` lädt (`dotenv` o. ä.) — lokal, solange die URL ankommt.
 
 ## Nachweis
 

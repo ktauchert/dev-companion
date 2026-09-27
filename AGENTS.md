@@ -58,11 +58,11 @@ Do not invent implementation details in docs that were not agreed. Record what w
 
 Planned shape (see `docs/architecture/monorepo.md`):
 
-- apps: Vite + TanStack Router web (SPA), NestJS API
+- apps: Vite + TanStack Router web (SPA), Fastify API (Nest scaffold until migration — ADR-004)
 - packages: domain modules plus shared, database, auth, AI, documents, validation
 - modular monolith, not microservices by default
 
-Stack (see `docs/architecture/tech-stack.md`): TypeScript, Vite, React, TanStack Router, Tailwind, shadcn/ui, NestJS, PostgreSQL, Drizzle, Better Auth, npm workspaces, OpenAI first with a provider boundary.
+Stack (see `docs/architecture/tech-stack.md`): TypeScript, Vite, React, TanStack Router, Tailwind, shadcn/ui, Fastify, PostgreSQL, Drizzle, Better Auth, npm workspaces, OpenAI first with a provider boundary.
 
 Current status: architecture / foundation; implementation of the codebase is not implied by conversation alone.
 
