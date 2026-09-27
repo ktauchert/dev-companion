@@ -58,7 +58,7 @@ Do not invent implementation details in docs that were not agreed. Record what w
 
 Planned shape (see `docs/architecture/monorepo.md`):
 
-- apps: Vite + TanStack Router web (SPA), Fastify API (Nest scaffold until migration — ADR-004)
+- apps: Vite + TanStack Router web (SPA), Fastify API (Nest scaffold until AP 1.2b clean start — ADR-004)
 - packages: domain modules plus shared, database, auth, AI, documents, validation
 - modular monolith, not microservices by default
 

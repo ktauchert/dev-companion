@@ -35,7 +35,7 @@ E2E für kritische Flows steht in development.md als Soll; in 1.8 nur anlegen, w
 | Secrets | CI braucht **keine** Produktions-Postgres; Tests ohne Compose oder mit Service-Container — beim Umsetzen eine Variante wählen |
 | Repo | `.github/workflows/` existiert noch nicht |
 
-Compose in CI ist optional. Wenn Migration getestet werden soll: Service-Container Postgres oder Skip mit klarem Kommentar. Nicht heimlich gegen eine lokale 5454-Instanz in GitHub laufen.
+Compose in CI ist optional. Wenn Migration getestet werden soll: Service-Container Postgres oder Skip mit klarem Kommentar. Nicht heimlich gegen eine lokale Compose-Instanz auf dem Entwicklerrechner in GitHub laufen.
 
 ## Schnitt
 

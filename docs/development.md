@@ -25,16 +25,16 @@ Compose how-to and pitfalls for AP 1.2: [lessons-learned/phase-1/ap2.md](lessons
 
 ### Database (AP 1.3)
 
-Postgres **creates the empty database** on first container start (`POSTGRES_DB`). Tables are **not** created by Compose. They come from Drizzle migrations in `packages/database`, applied against `POSTGRES_URL`.
+Postgres **creates the empty database** on first container start (`POSTGRES_DB`). Tables are **not** created by Compose. They come from Drizzle migrations in `packages/database`, using the connection URL from `getDatabaseUrl()`.
 
 ```text
 docker compose up -d          # server + empty DB (AP 1.2)
 # then: drizzle migrate       # tables (AP 1.3)
 ```
 
-Connection vars stay in the `POSTGRES_*` family (`POSTGRES_USER`, `POSTGRES_PASSWORD`, `POSTGRES_DB`, `POSTGRES_URL`). No separate `DATABASE_URL`.
+Connection settings live in `.env` as **`POSTGRES_*` parts only**: `POSTGRES_USER`, `POSTGRES_PASSWORD`, `POSTGRES_DB`, `POSTGRES_HOST`, `POSTGRES_PORT`. There is **no** `POSTGRES_URL` or `DATABASE_URL` line in `.env.example`. `@dev-companion/database` builds the URL in `getDatabaseUrl()` (password via `encodeURIComponent`). An optional runtime `DATABASE_URL` override is for CI/production only, not the local template.
 
-Host port is **5454** (`5454:5432`) because 5432 was already in use locally. `POSTGRES_URL` must match Compose user, password, database name, and that host port. The API is the only app that uses the URL. Schema and client live in `@dev-companion/database`; `apps/web` does not talk to Postgres.
+Default host port is **5432** (`5432:5432` in Compose). If host 5432 is already taken, change the Compose mapping and set `POSTGRES_PORT` to match — see [lessons-learned/phase-1/ap2.md](lessons-learned/phase-1/ap2.md). The API is the only app that opens Postgres. Schema and client live in `@dev-companion/database`; `apps/web` does not talk to Postgres.
 
 AP 1.3 implementation plan: [planning/phases/phase1/ap-1.3-datenbank.md](planning/phases/phase1/ap-1.3-datenbank.md). Compose pitfalls: [lessons-learned/phase-1/ap2.md](lessons-learned/phase-1/ap2.md).
 

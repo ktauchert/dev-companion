@@ -120,4 +120,4 @@ Phase 4 (SaaS/On-Prem) folgt nach M4, wenn M1–M4 für Solo-Nutzer stabil sind.
 | Phase 5 — Begleitung | → Produkt Phase 3.3 – 3.4 |
 | Phase 6 — Team | → Produkt Phase 4 (Team-Accounts, Stripe) |
 
-**GitHub-Backlog:** Stand nach [github-backlog-migration.md](github-backlog-migration.md) (September 2026). Phase 1 (#1–#2 closed, #38 Fastify, #3–#8). MVP-Milestones: Foundation (#39–#40), M1 (#9–#12, #15–#16), M2 (#41), M3 (#18, #42–#44), M4 (#45–#47, #24), Production (#26–#28, #48–#51). Obsolete AP-Issues (#13, #14, #17, #19–#22, #25, #29) geschlossen; #23 mit Label `later`.
+**GitHub-Backlog:** Stand nach [github-backlog-migration.md](github-backlog-migration.md) (September 2026). Phase 1 (#1–#2 closed, #38 Fastify clean scaffold, #3–#8). MVP-Milestones: Foundation (#39–#40), M1 (#9–#12, #15–#16), M2 (#41), M3 (#18, #42–#44), M4 (#45–#47, #24), Production (#26–#28, #48–#51). Obsolete AP-Issues (#13, #14, #17, #19–#22, #25, #29) geschlossen; #23 mit Label `later`.

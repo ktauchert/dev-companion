@@ -35,7 +35,7 @@ OAuth/Social Login, Magic Link, SMTP/E-Mail-Verifikation als Produktfeature, Cog
 | `@dev-companion/auth` | leere Package-Hülle aus AP 1.1 |
 | Stack | Better Auth, Drizzle-Adapter, Fastify |
 | SPA | Vite, TanStack Router, noch ohne Login-Routen |
-| Env | `POSTGRES_URL`; Better-Auth-Secret (Name beim Umsetzen festlegen, nicht committen) |
+| Env | dieselben `POSTGRES_*`-Teile wie 1.3; Better Auth nutzt denselben Drizzle-`db` (`drizzleAdapter`), kein separates Auth-DB-Env. Better-Auth-Secret (Name beim Umsetzen festlegen, nicht committen) |
 
 Lokal: E-Mail + Passwort reicht. Kein Mail-Provider in Phase 1, solange Better Auth ohne SMTP startet.
 

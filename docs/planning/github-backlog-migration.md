@@ -4,7 +4,7 @@
 
 **Quelle der Wahrheit:** dieses Dokument + [product-direction.md](product-direction.md) + [phasenplan.md](phasenplan.md).
 
-Ersetzt die alte Abbildung „Phase 2–6 horizontal“ (#9–#29) durch **MVP-Meilensteine M0–M4 + Production**, behält **Phase 1 Fundament** (#1–#8) und ergänzt **#38 Fastify Migration**.
+Ersetzt die alte Abbildung „Phase 2–6 horizontal“ (#9–#29) durch **MVP-Meilensteine M0–M4 + Production**, behält **Phase 1 Fundament** (#1–#8) und ergänzt **#38 Fastify clean scaffold**.
 
 ---
 
@@ -35,7 +35,7 @@ Ersetzt die alte Abbildung „Phase 2–6 horizontal“ (#9–#29) durch **MVP-M
 | #6 | AP 1.6 Dokumentenkern | **Behalten** | — | Phase 1 |
 | #7 | AP 1.7 Dashboard | **Behalten** | Basis für M4; kein externes Polling | Phase 1 |
 | #8 | AP 1.8 Qualität | **Behalten** | — | Phase 1 |
-| **#38** | — | **Neu** | AP 1.2b — Fastify Migration | Phase 1 |
+| **#38** | — | **Neu** | AP 1.2b — Fastify API (clean scaffold) | Phase 1 |
 | #9 | AP 2.1 Wizard | **Anpassen** | M1.1 — KI-Interview / Wizard | M1 |
 | #10 | AP 2.2 Artefakte | **Anpassen** | M1.2 — spec.md Generierung | M1 |
 | #11 | AP 2.3 KI-Provider | **Anpassen** | M1.0 — LLMProvider | M1 |
@@ -62,7 +62,7 @@ Ersetzt die alte Abbildung „Phase 2–6 horizontal“ (#9–#29) durch **MVP-M
 
 | Issue | Titel | Milestone | Fertig wenn |
 | --- | --- | --- | --- |
-| #38 | **AP 1.2b — Fastify Migration** | Phase 1 | Nest aus `apps/api`, Fastify Health-Route; ADR-004 |
+| #38 | **AP 1.2b — Fastify API (clean scaffold)** | Phase 1 | Nest-Scaffold löschen, Fastify neu; `GET /health`; ADR-004 — kein Portieren |
 | #39 | **F0.1 — Core Types** | Foundation | Interfaces in `packages/shared` |
 | #40 | **F0.2 — GitProviderAdapter** | Foundation | Interface + Stub; ADR-002 |
 | #41 | **M2.1 — GitHub PAT Push** | M2 — Git Push | PAT → Repo anlegen, README/spec/ADRs committen |
@@ -93,7 +93,7 @@ Ersetzt die alte Abbildung „Phase 2–6 horizontal“ (#9–#29) durch **MVP-M
 ## Reihenfolge der Arbeit (nach Migration)
 
 ```text
-Phase 1:  #38 Fastify → #3 DB → #4 Auth → #5 … → #8
+Phase 1:  #38 Fastify (clean) → #3 DB → #4 Auth → #5 … → #8
 Foundation (parallel wenn sinnvoll):  #39 Types → #40 GitProvider
 M1:  #11 LLMProvider → #9 Interview → #10 spec → #16 ADR → #15 Arch-Doku
 M2:  #41 Git Push

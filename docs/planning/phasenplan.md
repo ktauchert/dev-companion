@@ -2,7 +2,7 @@
 
 Arbeitsplan zum Folgen. Die [Roadmap](roadmap.md) und [Produktrichtung](product-direction.md) beschreiben die verfeinerte Ziel-Sicht (MVP M1–M4: Spec → Git → Board → Tracking). **Dieses Dokument** ist die **operative Reihenfolge der Arbeit**. Ein Arbeitspaket nach dem anderen. Code nur nach expliziter Freigabe (`code`, `execute`, `umsetzen`, `make it so`).
 
-**Aktuell:** Phase 0, AP 1.1 und AP 1.2 sind erledigt. Als Nächstes **[#38 AP 1.2b — Fastify Migration](https://github.com/ktauchert/dev-companion/issues/38)**, danach **[#3 AP 1.3 — Datenbank](phases/phase1/ap-1.3-datenbank.md)**.
+**Aktuell:** Phase 0, AP 1.1 und AP 1.2 sind erledigt. Als Nächstes **[#38 AP 1.2b — Fastify API (clean scaffold)](https://github.com/ktauchert/dev-companion/issues/38)** ([Plan](phases/phase1/ap-1.2b-fastify-scaffold.md)), danach **[#3 AP 1.3 — Datenbank](phases/phase1/ap-1.3-datenbank.md)**.
 
 Nach Phase 1 Fundament folgen die MVP-Meilensteine aus der [Produktrichtung](product-direction.md#mvp-meilensteine-priorisiert). Neue Fähigkeiten (Board-Sync, PAT-Polling) ergänzen die Phasen 2–5 — sie ersetzen die bestehenden Arbeitspakete nicht ohne bewusste Umbuchung. Code-Hinweise: [architecture/HINWEIS.md](../architecture/HINWEIS.md).
 
@@ -56,7 +56,7 @@ Diskussion, dann Docs. Kein Produktcode.
 
 ## Phase 1 — Fundament
 
-**Status:** in Arbeit — AP 1.1 und 1.2 erledigt, **#38 Fastify Migration** dann **#3 Datenbank** als Nächstes.
+**Status:** in Arbeit — AP 1.1 und 1.2 erledigt, **#38 Fastify clean scaffold** dann **#3 Datenbank** als Nächstes.
 
 ### Warum
 
@@ -76,6 +76,7 @@ Zuerst Grenzen und Datenmodell in Docs schärfen, dann Arbeitspaketweise umsetze
 | --- | --- | --- | --- | --- |
 | AP 1.1 | Monorepo | `apps/web`, `apps/api`, `packages/*` als npm Workspaces | Scaffold passend zu `docs/architecture/monorepo.md` | `npm install` im Root, beide Apps starten leer aber gültig |
 | AP 1.2 | Lokal-Infra | PostgreSQL per Docker Compose | Compose unter `infrastructure/` bzw. Root, wie in `docs/development.md`. Kein Redis, solange es keine Worker/Jobs gibt. | `docker compose up` reicht für lokale Postgres |
+| AP 1.2b | Fastify API | Nest-Scaffold entfernen, Fastify neu (clean start) | [Umsetzungsplan](phases/phase1/ap-1.2b-fastify-scaffold.md) · ADR-004 | `GET /health` auf Port 3000, keine Nest-Deps |
 | AP 1.3 | Datenbank | Drizzle-Schema, Migrationen, Zugriff in `packages/database` | [Umsetzungsplan](phases/phase1/ap-1.3-datenbank.md) | Migration läuft gegen Compose-Postgres |
 | AP 1.4 | Auth | Registrierung, Login, Session, Projektbesitz | [Umsetzungsplan](phases/phase1/ap-1.4-auth.md) | Nutzer kann Konto anlegen und bleibt eingeloggt |
 | AP 1.5 | Projekte | Anlegen, bearbeiten, besitzen, Status | [Umsetzungsplan](phases/phase1/ap-1.5-projekte.md) | Ein User hat mindestens ein eigenes Projekt |
@@ -241,7 +242,7 @@ Geschlossen: Milestone „Phase 3 — Architektur“ (Issues nach M1 umgebucht).
 
 | Issue | Titel | Milestone | Branch |
 | --- | --- | --- | --- |
-| [#38](https://github.com/ktauchert/dev-companion/issues/38) | AP 1.2b — Fastify Migration | Phase 1 — Fundament | `ap-1-2b-fastify-migration` |
+| [#38](https://github.com/ktauchert/dev-companion/issues/38) | AP 1.2b — Fastify API (clean scaffold) | Phase 1 — Fundament | `ap-1-2b-fastify-scaffold` |
 | [#3](https://github.com/ktauchert/dev-companion/issues/3) | AP 1.3 — Datenbank | Phase 1 — Fundament | `ap-1-3-datenbank` |
 | [#4](https://github.com/ktauchert/dev-companion/issues/4) | AP 1.4 — Auth | Phase 1 — Fundament | `ap-1-4-auth` |
 | [#5](https://github.com/ktauchert/dev-companion/issues/5) | AP 1.5 — Projekte | Phase 1 — Fundament | `ap-1-5-projekte` |
@@ -279,8 +280,8 @@ Geschlossene Issues #1–#2, #13–#14, #17, #19–#22, #25, #29 (Label `superse
 ### Ablauf am nächsten Ticket
 
 ```text
-[#38 AP 1.2b — Fastify Migration](https://github.com/ktauchert/dev-companion/issues/38)
-  → Create a branch  (ap-1-2b-fastify-migration)
+[#38 AP 1.2b — Fastify API (clean scaffold)](https://github.com/ktauchert/dev-companion/issues/38)
+  → Create a branch  (ap-1-2b-fastify-scaffold)
   → umsetzen
   → Pull Request → main
   → mergen, Issue schließen
@@ -289,7 +290,7 @@ Geschlossene Issues #1–#2, #13–#14, #17, #19–#22, #25, #29 (Label `superse
 
 ## So folgen
 
-1. Nur das aktuelle Arbeitspaket: **[#38 AP 1.2b — Fastify Migration](https://github.com/ktauchert/dev-companion/issues/38)**, danach **[#3 AP 1.3 — Datenbank](https://github.com/ktauchert/dev-companion/issues/3)**.
+1. Nur das aktuelle Arbeitspaket: **[#38 AP 1.2b — Fastify API (clean scaffold)](https://github.com/ktauchert/dev-companion/issues/38)** ([Plan](phases/phase1/ap-1.2b-fastify-scaffold.md)), danach **[#3 AP 1.3 — Datenbank](https://github.com/ktauchert/dev-companion/issues/3)**.
 2. Zuerst in Docs klären, wenn etwas fehlt (Modell, Grenze, ADR).
 3. Dann bewusst umsetzen lassen — idealerweise auf dem Branch der zugehörigen Issue.
 4. Fertig-wenn prüfen, PR mergen, Issue schließen, dann das nächste Paket.

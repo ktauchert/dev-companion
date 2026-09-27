@@ -7,7 +7,7 @@ CONTRIBUTING.md
 
 apps/
 ├── web/                    # Vite + React + TanStack Router (SPA)
-└── api/                    # Fastify + TypeScript (Nest scaffold until migration)
+└── api/                    # Fastify + TypeScript (Nest scaffold until AP 1.2b clean start)
 
 packages/
 ├── shared/                 # Core types: ProjectSpec, ADR, BoardEntity

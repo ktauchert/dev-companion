@@ -56,7 +56,7 @@ NestJS is not wrong for this product; it is **the wrong learning and velocity tr
 
 ## Consequences
 
-* **Migration work** when implementation is authorised (`code`): remove Nest from `apps/api`, add Fastify bootstrap, port health check and future routes. AP 1.1 Nest scaffold is throwaway, not sacred.
+* **Clean scaffold** when implementation is authorised (`code`): remove the Nest AP 1.1 scaffold from `apps/api` and set up Fastify from scratch — **do not port Nest modules or decorators**. Health route as minimal proof. AP 1.1 Nest scaffold is throwaway, not sacred.
 * **Structure is conventional, not enforced** — discipline required; document layout in `apps/api/README.md` when scaffolded.
 * Phase 1 implementation plans that mention Nest (AP 1.3, 1.4) refer to Fastify from now on.
 * [lessons-learned/phase-1/ap1.md](../lessons-learned/phase-1/ap1.md) stays historical (Nest era); do not rewrite history.
@@ -71,4 +71,4 @@ NestJS is not wrong for this product; it is **the wrong learning and velocity tr
 
 ## Implementation note
 
-**Not started.** Repo still contains the Nest AP 1.1 scaffold until an explicit coding trigger. See [architecture/HINWEIS.md](../architecture/HINWEIS.md).
+**Not started.** Repo still contains the Nest AP 1.1 scaffold until AP 1.2b ([#38](https://github.com/ktauchert/dev-companion/issues/38)): delete scaffold, Fastify clean start. See [ap-1.2b-fastify-scaffold.md](../planning/phases/phase1/ap-1.2b-fastify-scaffold.md).

@@ -16,7 +16,7 @@
 * Fastify
 * TypeScript
 
-See [ADR-004](../adr/ADR-004-FASTIFY-API.md). The repo may still contain the AP 1.1 Nest scaffold until migration (`code`).
+See [ADR-004](../adr/ADR-004-FASTIFY-API.md). The repo may still contain the AP 1.1 Nest scaffold until AP 1.2b clean Fastify scaffold ([#38](https://github.com/ktauchert/dev-companion/issues/38)).
 
 ## Database
 

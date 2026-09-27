@@ -110,7 +110,7 @@ flowchart LR
 
 ## 3. API-Schichten (Fastify)
 
-Ziel-Layout nach [ADR-004](../adr/ADR-004-FASTIFY-API.md). Nest-Scaffold in `apps/api` wird bei Migration ersetzt.
+Ziel-Layout nach [ADR-004](../adr/ADR-004-FASTIFY-API.md). Nest-Scaffold in `apps/api` wird bei AP 1.2b (clean Fastify scaffold) ersetzt — kein Portieren von Nest-Code.
 
 ```mermaid
 flowchart TB

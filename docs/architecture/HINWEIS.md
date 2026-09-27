@@ -6,14 +6,14 @@ Dokumentations-Stand aus [product-direction.md](../planning/product-direction.md
 
 ## Nest → Fastify (ADR-004)
 
-**Entschieden, nicht migriert.** `apps/api` enthält noch den Nest-AP-1.1-Scaffold.
+**Entschieden, nicht portiert.** `apps/api` enthält noch den Nest-AP-1.1-Scaffold. AP 1.2b ([#38](https://github.com/ktauchert/dev-companion/issues/38)): **clean start** — Nest löschen, Fastify neu aufsetzen. Kein Übertragen von Nest-Modulen oder -Code.
 
 Bei Umsetzung (`code`):
 
-1. Nest-Dependencies und `-Module`/Decorators aus `apps/api` entfernen.
-2. Fastify bootstrap (`src/server.ts` oder `src/app.ts`), Plugin-Layout: routes → services → providers.
+1. Nest-Dateien und `-Dependencies` aus `apps/api` entfernen.
+2. Fastify neu: `src/server.ts`, Layout routes → services → providers ([ap-1.2b](../planning/phases/phase1/ap-1.2b-fastify-scaffold.md)).
 3. Health-Route (`GET /health`) als Minimal-Nachweis.
-4. `packages/*` unverändert importierbar halten — Domain-Logik nicht in Route-Handler.
+4. `packages/*` später importierbar halten — Domain-Logik nicht in Route-Handler.
 5. Ports: Web **5173**, API **3000** (wie bisher).
 6. Root-`package.json` Scripts `dev:api` / `build:api` anpassen.
 
