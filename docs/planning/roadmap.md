@@ -1,132 +1,97 @@
 # Roadmap
 
-## Phase 1 — Foundation
+Produkt-Roadmap von MVP bis SaaS/On-Prem. Die [Produktrichtung](product-direction.md) und [User Journey](user-journey.md) sind die verfeinerte Ziel-Sicht.
 
-### User Management
-
-* Registration
-* Login
-* Session management
-* User/project ownership
-
-### Project Management
-
-* Create project
-* Edit project
-* Project dashboard
-* Project status
-* First acknowledgement of contribution (consistency over volume — keep this light)
-
-### Infrastructure
-
-* Monorepo
-* Docker
-* PostgreSQL
-* CI pipeline
-* Development environment
+**Operative Reihenfolge:** [Phasenplan](phasenplan.md) (Phase 1 Fundament läuft; danach MVP-Meilensteine M1–M4).
 
 ---
 
-## Phase 2 — Ideation Engine
+## MVP-Meilensteine (priorisiert)
 
-### Ideation Wizard
+| # | Meilenstein | Kern-Deliverable | Produkt-Phase |
+| --- | --- | --- | --- |
+| **M1** | Ideation & Spec | Projektidee → `spec.md` & `/docs/adr/*.md` in der UI | Phase 1.1 – 1.2 |
+| **M2** | GitHub PAT Push | PAT → Repo anlegen & Docs pushen | Phase 1.3 |
+| **M3** | Board Seeding | Milestones & Issues mit Akzeptanzkriterien via GitHub API | Phase 2.1 – 2.2 |
+| **M4** | Tracking Dashboard | Fortschritt & Milestones via PAT-Polling | Phase 3.1 – 3.2 |
 
-* Problem definition
-* Target users
-* Value proposition
-* Goals
-* Risks
-* Constraints
-
-### AI Integration
-
-* Structured project analysis
-* Summary generation
-* Scope analysis
-* Project maturity assessment
-* Recommendations
-
-### Documents
-
-* Generate initial project documents
-* Persist generated artifacts
-* Document versioning
+Voraussetzung für M1: [Phase 1 Fundament](phasenplan.md#phase-1--fundament) (Auth, Projekte, Dokumentenkern, Dashboard-Basis).
 
 ---
 
-## Phase 3 — Architecture Assistant
+## Phase 0 — Foundation (Datenmodell & Schnittstellen)
 
-### Stack Recommendation
+Technisches Fundament im Monorepo — ohne bestehenden Code zu brechen.
 
-* Frontend
-* Backend
-* Database
-* Infrastructure
-* Hosting
+* Module: `ideation`, `architecture-generator`, `board-sync`, `sdlc-dashboard` (Zielnamen; siehe [HINWEIS](../architecture/HINWEIS.md))
+* Core models: `ProjectSpec`, `ADR`, `BoardEntity`
+* `GitProviderAdapter` (GitHub/GitLab, PAT im MVP)
 
-### Architecture
-
-* High-level architecture
-* Component overview
-* Data model proposals
-* Architecture documentation
-
-### ADRs
-
-* Create ADRs
-* AI-assisted ADR generation
-* Decision history
+Läuft parallel zu Phasenplan Phase 1 und bereitet M1–M4 vor.
 
 ---
 
-## Phase 4 — Planning Engine
+## Phase 1 — Ideation & Architecture Seeding
 
-### Product Backlog
+* KI-guided interview / Spec-Generator (`spec.md`)
+* ADR Engine (Prompt-Chains aus Spec)
+* Git-Repo-Initialisierung (PAT → Repo + Commits)
 
-* Epics
-* Features
-* User Stories
-* Tasks
-
-### Prioritization
-
-* MVP
-* Post-MVP
-* Long-term
-
-### Planning
-
-* Sprint suggestions
-* Dependencies
-* Estimates
-* Implementation order
+→ **M1**, **M2**
 
 ---
 
-## Phase 5 — Development Companion
+## Phase 2 — Board Seeding
 
-* Code review assistance
-* Test suggestions
-* PR checklists
-* Implementation guidance
-* Deployment readiness
-* Technical debt tracking
+* Task Breakdown Engine (Spec → Milestones / Epics / Issues)
+* GitHub/GitLab API Sync
+* Dry-Run: Vorschau in Dev-Companion vor Push
 
----
-
-## Phase 6 — Team Features
-
-* Collaboration
-* Roles
-* Comments
-* Shared documents
-* Team project management
+→ **M3**
 
 ---
 
-The consistency loop (acknowledge showing up, compliment small contributions, never score by volume) is not a late add-on. It should be visible from the first project dashboard and deepen as the workflow grows.
+## Phase 3 — SDLC Dashboard & Orchestration
+
+* Status-Dashboard (Milestones, PRs, Commits)
+* PAT-Polling (kein Webhook im MVP; On-Prem-freundlich)
+* ADR-Compliance-Check (Basic, LLM)
+* Deployment-Guide Generator (`DEPLOYMENT.md`)
+
+Der Nutzer coded frei (Cursor, Copilot, Handarbeit). Dev-Companion trackt und guardet die Architektur-Linie.
+
+→ **M4**; 3.3–3.4 nach M4
+
+---
+
+## Phase 4 — Production (SaaS + On-Prem)
+
+* **SaaS:** GitHub App (Webhooks), Stripe (Pro/Team)
+* **On-Prem:** Docker Compose / Helm; Ollama/LM Studio für lokale KI
+
+Nach stabilem M1–M4 für Solo-Nutzer.
+
+---
+
+## Horizontale Phasen (Phasenplan)
+
+Die ältere Sequenzierung (Fundament → Ideation → Architektur → Planung → Begleitung → Team) bleibt im [Phasenplan](phasenplan.md) mit GitHub-Issues #1–#29. Mapping:
+
+| Phasenplan | Produkt-Richtung |
+| --- | --- |
+| Phase 1 — Fundament | Voraussetzung MVP |
+| Phase 2 — Ideation | → Phase 1.1 |
+| Phase 3 — Architektur | → Phase 1.2 |
+| Phase 4 — Planung | → Phase 2 (Board-Seeding) |
+| Phase 5 — Begleitung | → Phase 3.3 – 3.4 |
+| Phase 6 — Team | → Phase 4 (Team-Accounts) |
+
+---
+
+## Consistency loop
+
+Acknowledging showing up, complimenting small contributions, never scoring by volume — visible from the first project dashboard (AP 1.7) and deepening through SDLC tracking. Not a late add-on.
 
 ## Status
 
-The roadmap is sequencing at product level. Day-to-day follow the work packages in the [phase plan](phasenplan.md).
-
+MVP-Meilensteine M1–M4 sind die nächste Produkt-Priorität nach Abschluss von Phase 1 Fundament. Tagesarbeit: [Phasenplan](phasenplan.md) → aktuell **AP 1.3**.

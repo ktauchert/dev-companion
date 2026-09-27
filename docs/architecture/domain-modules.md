@@ -26,24 +26,49 @@ Responsible for:
 
 Responsible for:
 
-* Ideation wizard
-* Problem definition
-* Target users
-* Goals
-* Constraints
-* Ideation analysis
+* KI-guided interview / wizard
+* `ProjectSpec` (problem, target users, functional & non-functional requirements)
+* Problem definition, goals, constraints, tech-stack veto
+* Generation of structured `spec.md`
 
 ---
 
-## Architecture
+## Architecture (target: architecture-generator)
 
 Responsible for:
 
-* Architecture proposals
-* Technology recommendations
-* Architecture documents
-* Architecture diagrams
-* ADRs
+* ADR engine and prompt chains (derive ADRs from `spec.md`)
+* Architecture proposals and technology recommendations
+* Architecture documents and diagrams
+* ADRs with status (`Proposed` / `Accepted`)
+
+---
+
+## Board Sync (planned)
+
+Responsible for:
+
+* `GitProviderAdapter` (GitHub, GitLab)
+* Repo initialization and doc push (PAT in MVP)
+* Board seeding: milestones, epics, issues with acceptance criteria and labels
+* Dry-run preview before external push
+* `BoardEntity` mapping to provider APIs
+
+See [HINWEIS.md](HINWEIS.md).
+
+---
+
+## SDLC Dashboard (planned)
+
+Responsible for:
+
+* Milestone and issue progress (closed vs. open)
+* PR and commit overview
+* PAT polling (MVP) and webhook ingestion (later)
+* ADR compliance checks on changed files
+* Deployment guide generation
+
+Extends the project dashboard from Phase 1 Fundament. See [user-journey](../planning/user-journey.md).
 
 ---
 
@@ -51,12 +76,10 @@ Responsible for:
 
 Responsible for:
 
-* Epics
-* Features
-* User stories
-* Tasks
-* Prioritization
-* Sprint planning
+* Internal backlog model before board push
+* Epics, features, user stories, tasks
+* Prioritization and sprint suggestions
+* Task breakdown input for board-sync
 
 ---
 

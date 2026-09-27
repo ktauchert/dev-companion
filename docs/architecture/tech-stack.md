@@ -9,14 +9,14 @@
 * Tailwind CSS
 * shadcn/ui
 
-`apps/web` is a SPA. `apps/api` is NestJS. They are one split: UI talks to the API. See [ADR-003](../adr/ADR-003-SPA-AND-NEST-API.md). Next.js is not used.
+`apps/web` is a SPA. `apps/api` is Fastify + TypeScript. They are one split: UI talks to the API. See [ADR-003](../adr/ADR-003-SPA-AND-NEST-API.md) and [ADR-004](../adr/ADR-004-FASTIFY-API.md). Next.js is not used.
 
 ## Backend
 
-* NestJS
+* Fastify
 * TypeScript
 
-See [ADR-003](../adr/ADR-003-SPA-AND-NEST-API.md).
+See [ADR-004](../adr/ADR-004-FASTIFY-API.md). The repo may still contain the AP 1.1 Nest scaffold until migration (`code`).
 
 ## Database
 
@@ -36,14 +36,30 @@ The authentication layer is designed behind an application boundary so that alte
 
 Initial:
 
-* OpenAI
+* OpenAI (ideation interview, spec, ADR chains, compliance checks)
 
 Planned / supported by architecture:
 
-* Ollama
+* Ollama / LM Studio (On-Prem; full decoupling from cloud LLMs)
 * Azure OpenAI
 * Anthropic
 * AWS Bedrock
+
+## Git & project boards
+
+MVP:
+
+* GitHub REST/GraphQL via Personal Access Token (PAT)
+* GitLab via same `GitProviderAdapter` boundary
+* PAT polling for dashboard updates (no webhooks required)
+
+Later (SaaS):
+
+* GitHub App with webhooks for real-time updates
+
+## Billing (later)
+
+* Stripe for B2B Pro features (team accounts, extended KI quotas)
 
 ## Package manager
 

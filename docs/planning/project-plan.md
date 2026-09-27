@@ -55,6 +55,18 @@ Give the user a line to follow and a workspace that is already a project, not a 
 
 Each important step produces a persistent, reviewable, versioned artifact (vision, requirements, architecture, ADRs, plans, checklists, retrospectives).
 
+### Refined delivery path (MVP)
+
+From a vague idea to a tracked project — without replacing the developer's editor:
+
+1. **Ideation & spec** — KI-guided interview → `spec.md` and ADRs in the UI.
+2. **Git seeding** — PAT-based push of docs into a new or empty GitHub/GitLab repo.
+3. **Board seeding** — Milestones and issues with acceptance criteria on the external board (with dry-run preview).
+4. **SDLC tracking** — Dashboard reads progress via PAT polling; optional ADR-compliance checks and deployment guides.
+5. **Later** — SaaS (GitHub App, Stripe) and On-Prem (Docker/Helm, local LLMs).
+
+Full detail: [product-direction.md](product-direction.md) · [user-journey.md](user-journey.md).
+
 Acknowledge contribution by **consistency**, not volume:
 
 * compliment small contributions

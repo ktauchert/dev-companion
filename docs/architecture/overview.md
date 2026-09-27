@@ -14,22 +14,26 @@ Microservices are not introduced unless there is a concrete architectural reason
                     Web Application
                          │
                          ▼
-                    NestJS API
+                    Fastify API
                          │
-              ┌──────────┼──────────┐
-              │          │          │
-           Ideation  Architecture Planning
-              │          │          │
-              └──────────┼──────────┘
+     ┌────────────┬──────┴──────┬────────────┐
+     │            │             │            │
+  Ideation   Architecture   Planning   SDLC Dashboard
+     │            │             │            │
+     └────────────┴──────┬──────┴────────────┘
                          │
                      Documents
                          │
-              ┌──────────┼──────────┐
-              │          │          │
-           Database      AI        Auth
-              │          │          │
-          PostgreSQL   Provider   Provider
+              ┌──────────┼──────────┬──────────┐
+              │          │          │          │
+           Database      AI        Auth    Board Sync
+              │          │          │          │
+          PostgreSQL   Provider   Provider  GitProvider
+                                              │
+                                         GitHub / GitLab
 ```
+
+User journey: idea → spec & ADRs → git push → board seeding → free coding → tracking & compliance. See [user-journey](../planning/user-journey.md).
 
 ## Application Boundaries
 
@@ -43,7 +47,7 @@ Responsible for:
 * Client-side state
 * Client routing (TanStack Router)
 
-The web app is a Vite SPA. It does not own domain logic or persistence; it calls the NestJS API. See [ADR-003](../adr/ADR-003-SPA-AND-NEST-API.md).
+The web app is a Vite SPA. It does not own domain logic or persistence; it calls the Fastify API. See [ADR-003](../adr/ADR-003-SPA-AND-NEST-API.md) and [ADR-004](../adr/ADR-004-FASTIFY-API.md).
 
 ### API
 
