@@ -120,4 +120,4 @@ Phase 4 (SaaS/On-Prem) folgt nach M4, wenn M1–M4 für Solo-Nutzer stabil sind.
 | Phase 5 — Begleitung | → Produkt Phase 3.3 – 3.4 |
 | Phase 6 — Team | → Produkt Phase 4 (Team-Accounts, Stripe) |
 
-Die GitHub-Issues (#1–#29) im Phasenplan bleiben gültig, bis sie bewusst umgebucht werden. Neue Fähigkeiten (board-sync, PAT-Polling) ergänzen die bestehenden Arbeitspakete — sie ersetzen Phase 1 Fundament nicht.
+**GitHub-Backlog:** Phase 1 (#1–#8) bleibt. #9–#29 werden per [github-backlog-migration.md](github-backlog-migration.md) auf MVP-Milestones (M1–M4, Production) umgebucht — nicht 1:1 die alte horizontale Phase 2–6.

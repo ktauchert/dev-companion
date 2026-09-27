@@ -215,6 +215,8 @@ Nur bauen, was ein zweiter Mensch wirklich braucht. Keine vorauseilende Multi-Te
 
 ## GitHub (wie GitLab Issues / Milestones / Epics)
 
+> **Migration ausstehend:** Die Tabelle unten ist die **alte** Struktur (Phase 2–6 horizontal). Ziel und Mapping zur [Produktrichtung](product-direction.md): **[github-backlog-migration.md](github-backlog-migration.md)** — dort auch der Agent-Prompt für `gh`.
+
 Ja. GitHub hat ein Issue-System. Es ist GitLab sehr ähnlich, die Namen weichen ab.
 
 | GitLab | GitHub | Bei uns |

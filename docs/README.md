@@ -10,6 +10,7 @@ Index of project documents. Root stays lean: `README.md`, `AGENTS.md`, `CONTRIBU
 * [Phase plan](planning/phasenplan.md) — horizontal phases and work packages (follow this)
 * [Implementation plans](planning/phases/) — what to do per work package (Phase 1 from AP 1.3)
 * [Roadmap](planning/roadmap.md) — MVP milestones M1–M4 and product phases
+* [GitHub backlog migration](planning/github-backlog-migration.md) — issue/milestone mapping + agent prompt
 
 ## Architecture
 
