@@ -8,6 +8,10 @@ The system is divided into explicit domain modules while remaining deployable as
 
 Microservices are not introduced unless there is a concrete architectural reason.
 
+## Diagrams
+
+Vollständige Grafiken (Mermaid): **[diagram.md](diagram.md)** — System, Monorepo, API-Schichten, MVP-Fluss, Deployment.
+
 ## High-Level Structure
 
 ```text
