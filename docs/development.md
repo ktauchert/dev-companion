@@ -23,7 +23,7 @@ Additional services may be introduced when required.
 
 Compose how-to and pitfalls for AP 1.2: [lessons-learned/phase-1/ap2.md](lessons-learned/phase-1/ap2.md).
 
-### Database (AP 1.3)
+### Database & Auth (AP 1.3)
 
 Postgres **creates the empty database** on first container start (`POSTGRES_DB`). Tables are **not** created by Compose. They come from Drizzle migrations in `packages/database`, using the connection URL from `getDatabaseUrl()`.
 
