@@ -19,6 +19,7 @@ Index of project documents. Root stays lean: `README.md`, `AGENTS.md`, `CONTRIBU
 * [Domain modules](architecture/domain-modules.md)
 * [Monorepo](architecture/monorepo.md)
 * [Tech stack](architecture/tech-stack.md)
+* [UI shell](architecture/ui-shell.md) — command palette, header/footer chrome, theme (from DevOS)
 * [HINWEIS — planned code changes](architecture/HINWEIS.md)
 
 ## Decisions

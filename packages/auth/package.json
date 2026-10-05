@@ -1,5 +1,18 @@
 {
   "name": "@dev-companion/auth",
   "version": "0.0.0",
-  "private": true
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./auth.ts",
+    "./schema": "./auth-schema.ts"
+  },
+  "scripts": {
+    "auth:generate": "npx auth@latest generate --config auth.ts --output auth-schema.ts -y"
+  },
+  "dependencies": {
+    "@better-auth/drizzle-adapter": "^1.7.6",
+    "@dev-companion/database": "*",
+    "better-auth": "^1.7.6"
+  }
 }

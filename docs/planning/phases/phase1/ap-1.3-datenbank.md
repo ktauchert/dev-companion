@@ -72,21 +72,49 @@ Kein Domain-CRUD in `packages/database` — nur Tabellen + Verbindungsfabrik.
 ## Schnitt
 
 ```text
+packages/auth/
+  auth-schema.ts              # Tabellen (CLI generate); nur pgTable, keine relations
+  auth.ts                     # betterAuth + drizzleAdapter relations-v2
+
 packages/database/
-  drizzle.config.ts, src/env.ts, src/schema.ts, src/client.ts, src/index.ts
+  drizzle.config.ts           # schema: ../auth/auth-schema.ts + schema-tables.ts
+  src/env.ts                  # dotenv (Root-.env), getDatabaseUrl()
+  src/db/schema-tables.ts     # project, document
+  src/relations.ts            # ein defineRelations für alle 6 Tabellen
+  src/schema.ts               # Barrel-Export aller Tabellen
+  src/index.ts                # drizzle(url, { relations }) — kein schema-Key (Drizzle 1.0)
   drizzle/                    # Migrationen committen
 
-packages/auth/
-  betterAuth + drizzleAdapter(db); export für API
-
 apps/api/
-  DB-Plugin, Auth-Handler, CORS, GET /health (+ checks.database)
+  routes/auth.ts              # /api/auth/* → auth.handler (Fetch)
+  routes/health.ts            # GET /health + SELECT 1
+  server.ts                   # CORS (WEB_ORIGIN), Port 3141
 
 apps/web/
-  /register, /login, Session (Better Auth Client)
+  /                 # öffentliche Dummy-Home (SaaS-Landing, auch ausgeloggt)
+  /register, /login # Better Auth Client, credentials: include
+  /app              # geschützt: Welcome / Mini-Dashboard (Session nötig)
+  lib/auth-client.ts
+  — noch offen; shadcn/Theme siehe unten
 ```
 
-Root-Scripts (Namen frei): `db:generate`, `db:migrate`.
+Root-Scripts: `db:generate`, `db:migrate`, `db:studio`.
+
+## Monorepo vs. Getting-Started-Tutorials
+
+Drizzle- und Better-Auth-Docs gehen von **einem** Ordner aus: `schema.ts`, `db.ts`, `drizzle/` nebeneinander. Im Workspace ist das aufgeteilt — deshalb passen Copy-Paste-Schritte oft nicht.
+
+| Tutorial-Annahme | Dev-Companion |
+| --- | --- |
+| Alles in `src/db/schema.ts` | Auth-Tabellen in `packages/auth/auth-schema.ts`, App-Tabellen in `packages/database/src/db/schema-tables.ts` |
+| `drizzle(db, { schema })` | Drizzle **1.0 RC:** nur `drizzle(url, { relations })` — Relations in `packages/database/src/relations.ts` |
+| `auth generate` schreibt relations mit | Generator kennt `defineRelations` noch nicht → Relations **manuell** mergen, nicht zwei Blöcke auf `user` |
+| Adapter `@better-auth/drizzle-adapter` | **`relations-v2`**-Import, wenn Drizzle 1.0 Relations genutzt werden |
+| Zirkuläre Imports egal | **`auth` → `@dev-companion/database`**, database importiert Auth-**Schema** per relativem Pfad (`../../auth/…`), nicht `auth.ts` |
+| `.env` neben der App | **Root-`.env`**; `packages/database/src/env.ts` lädt sie für drizzle-kit und Laufzeit |
+| `DATABASE_URL` in `.env` | Nur `POSTGRES_*`; URL baut `getDatabaseUrl()` (optional `DATABASE_URL`-Override zur Laufzeit) |
+
+**Abhängigkeitsrichtung:** `apps/api` → `@dev-companion/auth` + `@dev-companion/database` → Auth-Schema (relativ). Kein `@dev-companion/auth` in `packages/database/package.json` (Zirkel vermeiden).
 
 ## Schritte
 
@@ -102,10 +130,26 @@ Root-Scripts (Namen frei): `db:generate`, `db:migrate`.
 9. Nachweis: migrate wiederholbar; Login + Reload → Session da
 ```
 
+## Web (SaaS-Schnitt, Stand Diskussion)
+
+Öffentliche Home + Auth + geschützter Einstieg — kein volles Dashboard (Projektliste → AP 1.7).
+
+| Route | Wer | Inhalt |
+| --- | --- | --- |
+| `/` | alle | Dummy-Landing: Produktversprechen, Links Login/Register |
+| `/login`, `/register` | Gäste | E-Mail/Passwort via Better Auth Client |
+| `/app` | eingeloggt | Welcome: Name, Logout; Platzhalter für spätere Projektübersicht |
+
+Auth-Guard: TanStack Router `beforeLoad` — Session fehlt → `/login?redirect=…`.
+
+**UI:** Shell, Theme, Ctrl+K — siehe [ui-shell.md](../../../architecture/ui-shell.md) (portiert aus DevOS / `dev-os_OLD`). Für 1.3: shadcn init + Theme-Tokens + minimale Shell auf `/app`; Landing/Auth ohne volle Chrome.
+
+**Ton (Copy):** ermutigend, nicht wertend — wie AP 1.7; kein „0 Projekte“-Tadel auf Welcome.
+
 ## Offene Punkte (nicht blockierend)
 
-* Treiber `postgres` vs. `pg`
-* Wo `dotenv` lädt
+* Treiber: **`pg`** (entschieden)
+* **`dotenv`:** Root-`.env` in `packages/database/src/env.ts` (beim Import von `@dev-companion/database`)
 * Cookie SameSite lokal (zwei Ports)
 * E-Mail-Verifikation an/aus ohne SMTP
 * Optional später: `npx auth@latest generate` zum Abgleich — nicht nötig, wenn Schema der Core-Referenz folgt
