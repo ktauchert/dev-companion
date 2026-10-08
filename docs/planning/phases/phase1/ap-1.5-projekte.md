@@ -2,7 +2,7 @@
 
 | | |
 | --- | --- |
-| Status | nach 1.3 |
+| Status | als Nächstes |
 | Issue | [#5](https://github.com/ktauchert/dev-companion/issues/5) |
 | Branch | `ap-1-5-projekte` |
 | Fertig wenn | Ein eingeloggter User hat mindestens ein **eigenes** Projekt |
@@ -17,7 +17,7 @@ Projekte anlegen, bearbeiten, besitzen, Status setzen. Domain **Projects** (Meta
 * Anlegen und Bearbeiten (Name, Status)
 * `owner_id` = aktueller User; fremde Projekte nicht lesen/ändern
 * Einfache SPA-Fläche: Liste der eigenen Projekte, Anlegen, Edit
-* Status als Text, klein (`draft` / `active` aus 1.3 reicht, solange nichts anderes entschieden ist)
+* Status als Text, klein (`active` / `inactive` aus dem 1.3-Schema reicht, solange nichts anderes entschieden ist)
 
 ## Nicht in diesem AP
 
@@ -58,7 +58,7 @@ Domain spricht Drizzle nicht direkt, wenn die Grenze schon steht — sonst Repos
 
 ## Offene Punkte
 
-* Status-Werte über `draft` / `active` hinaus — erst wenn die UI es braucht.
+* Status-Werte über `active` / `inactive` hinaus — erst wenn die UI es braucht.
 * Löschen / Archivieren — nicht vereinbart; weglassen oder nur „nicht in der Liste“, kein hartes Delete ohne Bedarf.
 
 ## Nachweis

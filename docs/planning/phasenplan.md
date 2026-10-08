@@ -2,7 +2,7 @@
 
 Arbeitsplan zum Folgen. Die [Roadmap](roadmap.md) und [Produktrichtung](product-direction.md) beschreiben die verfeinerte Ziel-Sicht (MVP M1–M4: Spec → Git → Board → Tracking). **Dieses Dokument** ist die **operative Reihenfolge der Arbeit**. Ein Arbeitspaket nach dem anderen. Code nur nach expliziter Freigabe (`code`, `execute`, `umsetzen`, `make it so`).
 
-**Aktuell:** Phase 0, AP 1.1 und AP 1.2 sind erledigt. Als Nächstes **[#38 AP 1.2b — Fastify API (clean scaffold)](https://github.com/ktauchert/dev-companion/issues/38)** ([Plan](phases/phase1/ap-1.2b-fastify-scaffold.md)), danach **[#3 AP 1.3 — Datenbank & Auth](phases/phase1/ap-1.3-datenbank.md)**.
+**Aktuell:** Phase 0 und Phase-1-APs bis **1.3** (inkl. 1.2b) sind erledigt. Als Nächstes **[#5 AP 1.5 — Projekte](https://github.com/ktauchert/dev-companion/issues/5)** ([Plan](phases/phase1/ap-1.5-projekte.md)).
 
 Nach Phase 1 Fundament folgen die MVP-Meilensteine aus der [Produktrichtung](product-direction.md#mvp-meilensteine-priorisiert). Neue Fähigkeiten (Board-Sync, PAT-Polling) ergänzen die Phasen 2–5 — sie ersetzen die bestehenden Arbeitspakete nicht ohne bewusste Umbuchung. Code-Hinweise: [architecture/HINWEIS.md](../architecture/HINWEIS.md).
 
@@ -280,17 +280,17 @@ Geschlossene Issues #1–#2, #13–#14, #17, #19–#22, #25, #29 (Label `superse
 ### Ablauf am nächsten Ticket
 
 ```text
-[#38 AP 1.2b — Fastify API (clean scaffold)](https://github.com/ktauchert/dev-companion/issues/38)
-  → Create a branch  (ap-1-2b-fastify-scaffold)
+[#5 AP 1.5 — Projekte](https://github.com/ktauchert/dev-companion/issues/5)
+  → Branch ap-1-5-projekte
   → umsetzen
   → Pull Request → main
   → mergen, Issue schließen
-  → [#3 AP 1.3 — Datenbank & Auth](https://github.com/ktauchert/dev-companion/issues/3)
+  → [#6 AP 1.6 — Dokumentenkern](https://github.com/ktauchert/dev-companion/issues/6)
 ```
 
 ## So folgen
 
-1. Nur das aktuelle Arbeitspaket: **[#38 AP 1.2b — Fastify API (clean scaffold)](https://github.com/ktauchert/dev-companion/issues/38)** ([Plan](phases/phase1/ap-1.2b-fastify-scaffold.md)), danach **[#3 AP 1.3 — Datenbank & Auth](https://github.com/ktauchert/dev-companion/issues/3)**.
+1. Nur das aktuelle Arbeitspaket: **[#5 AP 1.5 — Projekte](https://github.com/ktauchert/dev-companion/issues/5)** ([Plan](phases/phase1/ap-1.5-projekte.md)).
 2. Zuerst in Docs klären, wenn etwas fehlt (Modell, Grenze, ADR).
 3. Dann bewusst umsetzen lassen — idealerweise auf dem Branch der zugehörigen Issue.
 4. Fertig-wenn prüfen, PR mergen, Issue schließen, dann das nächste Paket.

@@ -2,7 +2,7 @@
 
 | | |
 | --- | --- |
-| Status | nach 1.2b |
+| Status | erledigt (PR #53) |
 | Issue | [#3](https://github.com/ktauchert/dev-companion/issues/3) (ehem. AP 1.4 [#4](https://github.com/ktauchert/dev-companion/issues/4) hier mit drin) |
 | Branch | `ap-1-3-datenbank` |
 | Fertig wenn | Migration läuft gegen Compose-Postgres **und** Nutzer kann Konto anlegen und bleibt eingeloggt |

@@ -12,20 +12,20 @@
 | --- | --- | --- |
 | 1.1 Monorepo | [#1](https://github.com/ktauchert/dev-companion/issues/1) | [lessons-learned/ap1](../../../lessons-learned/phase-1/ap1.md) |
 | 1.2 Lokal-Infra | [#2](https://github.com/ktauchert/dev-companion/issues/2) | [lessons-learned/ap2](../../../lessons-learned/phase-1/ap2.md) |
+| 1.2b Fastify API | [#38](https://github.com/ktauchert/dev-companion/issues/38) | [ap-1.2b-fastify-scaffold.md](ap-1.2b-fastify-scaffold.md) |
+| 1.3 Datenbank & Auth | [#3](https://github.com/ktauchert/dev-companion/issues/3) | [lessons-learned/ap3](../../../lessons-learned/phase-1/ap3.md) |
 
 ## Als Nächstes
 
 | AP | Status | Plan | Issue |
 | --- | --- | --- | --- |
-| 1.2b Fastify API | als Nächstes | [ap-1.2b-fastify-scaffold.md](ap-1.2b-fastify-scaffold.md) | [#38](https://github.com/ktauchert/dev-companion/issues/38) |
+| 1.5 Projekte | als Nächstes | [ap-1.5-projekte.md](ap-1.5-projekte.md) | [#5](https://github.com/ktauchert/dev-companion/issues/5) |
 
-## Ab AP 1.3
+## Danach
 
 | AP | Status | Plan | Issue |
 | --- | --- | --- | --- |
-| 1.3 Datenbank & Auth | nach 1.2b | [ap-1.3-datenbank.md](ap-1.3-datenbank.md) | [#3](https://github.com/ktauchert/dev-companion/issues/3) |
 | ~~1.4 Auth~~ | → in 1.3 | [ap-1.4-auth.md](ap-1.4-auth.md) (Redirect) | [#4](https://github.com/ktauchert/dev-companion/issues/4) geschlossen |
-| 1.5 Projekte | danach | [ap-1.5-projekte.md](ap-1.5-projekte.md) | [#5](https://github.com/ktauchert/dev-companion/issues/5) |
 | 1.6 Dokumentenkern | danach | [ap-1.6-dokumentenkern.md](ap-1.6-dokumentenkern.md) | [#6](https://github.com/ktauchert/dev-companion/issues/6) |
 | 1.7 Dashboard | danach | [ap-1.7-dashboard.md](ap-1.7-dashboard.md) | [#7](https://github.com/ktauchert/dev-companion/issues/7) |
 | 1.8 Qualität | danach | [ap-1.8-qualitaet.md](ap-1.8-qualitaet.md) | [#8](https://github.com/ktauchert/dev-companion/issues/8) |
