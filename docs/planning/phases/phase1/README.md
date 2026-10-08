@@ -23,11 +23,11 @@
 
 | AP | Status | Plan | Issue |
 | --- | --- | --- | --- |
-| 1.3 Datenbank | nach 1.2b | [ap-1.3-datenbank.md](ap-1.3-datenbank.md) | [#3](https://github.com/ktauchert/dev-companion/issues/3) |
-| 1.4 Auth | danach | [ap-1.4-auth.md](ap-1.4-auth.md) | [#4](https://github.com/ktauchert/dev-companion/issues/4) |
+| 1.3 Datenbank & Auth | nach 1.2b | [ap-1.3-datenbank.md](ap-1.3-datenbank.md) | [#3](https://github.com/ktauchert/dev-companion/issues/3) |
+| ~~1.4 Auth~~ | → in 1.3 | [ap-1.4-auth.md](ap-1.4-auth.md) (Redirect) | [#4](https://github.com/ktauchert/dev-companion/issues/4) geschlossen |
 | 1.5 Projekte | danach | [ap-1.5-projekte.md](ap-1.5-projekte.md) | [#5](https://github.com/ktauchert/dev-companion/issues/5) |
 | 1.6 Dokumentenkern | danach | [ap-1.6-dokumentenkern.md](ap-1.6-dokumentenkern.md) | [#6](https://github.com/ktauchert/dev-companion/issues/6) |
 | 1.7 Dashboard | danach | [ap-1.7-dashboard.md](ap-1.7-dashboard.md) | [#7](https://github.com/ktauchert/dev-companion/issues/7) |
 | 1.8 Qualität | danach | [ap-1.8-qualitaet.md](ap-1.8-qualitaet.md) | [#8](https://github.com/ktauchert/dev-companion/issues/8) |
 
-Reihenfolge nicht überspringen: ohne 1.2b kein Fastify-API-Layer; ohne 1.3 keine Auth-Tabellen, ohne 1.4 kein Besitz, ohne Projekt und Dokument kein Dashboard mit Substanz.
+Reihenfolge nicht überspringen: ohne 1.2b kein Fastify-API-Layer; ohne 1.3 (DB + Auth) kein Besitz in 1.5, ohne Projekt und Dokument kein Dashboard mit Substanz.

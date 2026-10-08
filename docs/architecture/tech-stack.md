@@ -8,6 +8,8 @@
 * TypeScript
 * Tailwind CSS
 * shadcn/ui
+* React Hook Form + `@hookform/resolvers` (forms)
+* Zod via `@dev-companion/validation` (shared schemas + inferred types)
 
 `apps/web` is a SPA. `apps/api` is Fastify + TypeScript. They are one split: UI talks to the API. See [ADR-003](../adr/ADR-003-SPA-AND-NEST-API.md) and [ADR-004](../adr/ADR-004-FASTIFY-API.md). Next.js is not used.
 
@@ -28,9 +30,14 @@ See [ADR-004](../adr/ADR-004-FASTIFY-API.md). The repo may still contain the AP 
 
 ## Authentication
 
-* Better Auth
+* Better Auth (server: `packages/auth`; client: `apps/web/src/lib/auth-client.ts`)
 
 The authentication layer is designed behind an application boundary so that alternative providers can be introduced later.
+
+## Validation
+
+* Zod schemas in `@dev-companion/validation` (`src/schemas/`, inferred types in `src/types/`)
+* Used by web forms (RHF) and later by API route validation where needed
 
 ## AI
 

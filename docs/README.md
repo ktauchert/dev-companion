@@ -10,6 +10,7 @@ Index of project documents. Root stays lean: `README.md`, `AGENTS.md`, `CONTRIBU
 * [Phase plan](planning/phasenplan.md) — horizontal phases and work packages (follow this)
 * [Implementation plans](planning/phases/) — what to do per work package (Phase 1 from AP 1.3)
 * [Roadmap](planning/roadmap.md) — MVP milestones M1–M4 and product phases
+* [Landing page](planning/landing-page.md) — public `/` copy and design notes
 * [GitHub backlog migration](planning/github-backlog-migration.md) — issue/milestone mapping + agent prompt
 
 ## Architecture
@@ -19,6 +20,7 @@ Index of project documents. Root stays lean: `README.md`, `AGENTS.md`, `CONTRIBU
 * [Domain modules](architecture/domain-modules.md)
 * [Monorepo](architecture/monorepo.md)
 * [Tech stack](architecture/tech-stack.md)
+* [UI shell](architecture/ui-shell.md) — command palette, header/footer chrome, theme (from DevOS)
 * [HINWEIS — planned code changes](architecture/HINWEIS.md)
 
 ## Decisions
@@ -38,4 +40,4 @@ Index of project documents. Root stays lean: `README.md`, `AGENTS.md`, `CONTRIBU
 
 * [Phase 1 / AP 1.1 Monorepo](lessons-learned/phase-1/ap1.md)
 * [Phase 1 / AP 1.2 Lokal-Infra](lessons-learned/phase-1/ap2.md)
-* [Phase 1 / AP 1.3 Datenbank](lessons-learned/phase-1/ap3.md)
+* [Phase 1 / AP 1.3 Datenbank & Auth](lessons-learned/phase-1/ap3.md)

@@ -29,8 +29,8 @@ Ersetzt die alte Abbildung „Phase 2–6 horizontal“ (#9–#29) durch **MVP-M
 | --- | --- | --- | --- | --- |
 | #1 | AP 1.1 Monorepo | **Behalten** (closed) | — | Phase 1 |
 | #2 | AP 1.2 Lokal-Infra | **Behalten** (closed) | — | Phase 1 |
-| #3 | AP 1.3 Datenbank | **Behalten** | Body: Fastify/ADR-004 | Phase 1 |
-| #4 | AP 1.4 Auth | **Behalten** | Body: Fastify/ADR-004 | Phase 1 |
+| #3 | AP 1.3 Datenbank & Auth | **Behalten** | Body: DB + Better Auth zusammen; #4 superseded | Phase 1 |
+| #4 | AP 1.4 Auth | **Geschlossen** | In #3 zusammengelegt (2026-09) | — |
 | #5 | AP 1.5 Projekte | **Behalten** | — | Phase 1 |
 | #6 | AP 1.6 Dokumentenkern | **Behalten** | — | Phase 1 |
 | #7 | AP 1.7 Dashboard | **Behalten** | Basis für M4; kein externes Polling | Phase 1 |
@@ -93,7 +93,7 @@ Ersetzt die alte Abbildung „Phase 2–6 horizontal“ (#9–#29) durch **MVP-M
 ## Reihenfolge der Arbeit (nach Migration)
 
 ```text
-Phase 1:  #38 Fastify (clean) → #3 DB → #4 Auth → #5 … → #8
+Phase 1:  #38 Fastify (clean) → #3 DB & Auth → #5 … → #8
 Foundation (parallel wenn sinnvoll):  #39 Types → #40 GitProvider
 M1:  #11 LLMProvider → #9 Interview → #10 spec → #16 ADR → #15 Arch-Doku
 M2:  #41 Git Push

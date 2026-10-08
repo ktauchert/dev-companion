@@ -20,10 +20,12 @@ packages/
 ├── sdlc-dashboard/         # Planned — status, polling, compliance (or extend planning + web)
 ├── planning/
 ├── documents/
-└── validation/
+└── validation/             # Zod schemas + inferred types (src/schemas, src/types)
 ```
 
-`board-sync` and `sdlc-dashboard` are **not yet in the repo**. See [HINWEIS.md](HINWEIS.md) before adding or renaming packages.
+`board-sync` and `sdlc-dashboard` are **not yet in the repo**.
+
+**Validation:** `@dev-companion/validation` — shared Zod schemas; web forms via RHF + `@hookform/resolvers`. Auth **client** lives in `apps/web`, not `packages/auth` (server only). See [HINWEIS.md](HINWEIS.md) before adding or renaming packages.
 
 ```text
 packages/ (current)

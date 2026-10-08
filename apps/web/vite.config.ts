@@ -8,6 +8,9 @@ import tailwindcss from '@tailwindcss/vite'
 
 const config = defineConfig({
   resolve: { tsconfigPaths: true },
+  optimizeDeps: {
+    include: ['clsx', 'tailwind-merge', 'class-variance-authority'],
+  },
   plugins: [
     devtools(),
     tailwindcss(),

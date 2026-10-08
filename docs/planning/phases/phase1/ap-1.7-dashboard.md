@@ -6,7 +6,7 @@
 | Issue | [#7](https://github.com/ktauchert/dev-companion/issues/7) |
 | Branch | `ap-1-7-dashboard` |
 | Fertig wenn | Nach einer kleinen Änderung sieht der User **Anerkennung**, keine Punktzahl |
-| Voraussetzung | Login, mindestens ein Projekt, Dokumente speicherbar (1.4–1.6) |
+| Voraussetzung | Login, mindestens ein Projekt, Dokumente speicherbar (1.3, 1.5–1.6) |
 
 ## Ziel
 
@@ -31,9 +31,9 @@ Volumen-Scores, Badges-Systeme, tägliche Streaks, Vergleich zwischen Personen. 
 
 | Braucht | Stand |
 | --- | --- |
-| SPA + Router | AP 1.1, Tailwind liegt; shadcn ggf. schon aus 1.4 |
+| SPA + Router | AP 1.1, Tailwind liegt; shadcn ggf. schon aus 1.3 |
 | Projekte + Docs | 1.5 / 1.6 als Daten für die Übersicht |
-| Auth | 1.4, Dashboard nur eingeloggt |
+| Auth | 1.3, Dashboard nur eingeloggt |
 | Copy-Richtung | Konsistenz, kleine Beiträge; nicht Output |
 
 Kein eigenes `packages/progress` in monorepo.md. Der Hinweis darf in API+Web leben, solange er nicht zur Score-Engine wird.

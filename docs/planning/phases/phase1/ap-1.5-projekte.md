@@ -2,11 +2,11 @@
 
 | | |
 | --- | --- |
-| Status | nach 1.4 |
+| Status | nach 1.3 |
 | Issue | [#5](https://github.com/ktauchert/dev-companion/issues/5) |
 | Branch | `ap-1-5-projekte` |
 | Fertig wenn | Ein eingeloggter User hat mindestens ein **eigenes** Projekt |
-| Voraussetzung | AP 1.4: Session; AP 1.3: Tabelle `project` |
+| Voraussetzung | AP 1.3: Session + Login; Tabelle `project` |
 
 ## Ziel
 

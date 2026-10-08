@@ -31,7 +31,7 @@ Wizard, KI-Entwürfe, Export-Pipelines, ADR-UI (Phase 3 nutzt denselben Kern sp�
 | --- | --- |
 | `@dev-companion/documents` | leere Hülle aus AP 1.1 |
 | Tabelle `document` | AP 1.3: `title`, `body` am Kopf — **keine** Versionstabelle |
-| Projekt + Auth | 1.4 / 1.5 |
+| Projekt + Auth | 1.3 / 1.5 |
 | Philosophie | Artefakte persistent und versioniert ([project-plan](../../project-plan.md)) |
 
 **Versionierung (Arbeitsstand, kein ADR):** 1.3 hat `body` direkt auf `document`. Für History eine Tabelle **`document_version`** (immutable: document_id, version, body, created_at, optional author_id). `document.body` kann den aktuellen Stand cachen oder nur Metadaten halten — eine Variante beim Umsetzen wählen, Migration in `packages/database`.

@@ -24,6 +24,9 @@
   },
   "scripts": {
     "dev:web": "npm run dev -w web",
-    "dev:api": "npm run start:dev -w api"
+    "dev:api": "npm run start:dev -w api",
+    "db:generate": "npm run db:generate -w @dev-companion/database",
+    "db:migrate": "npm run db:migrate -w @dev-companion/database",
+    "db:studio": "npm run db:studio -w @dev-companion/database"
   }
 }

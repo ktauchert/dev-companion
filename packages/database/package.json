@@ -1,5 +1,25 @@
 {
   "name": "@dev-companion/database",
   "version": "0.0.0",
-  "private": true
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./schema": "./src/schema.ts"
+  },
+  "scripts": {
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:studio": "drizzle-kit studio"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.4",
+    "drizzle-orm": "^1.0.0-rc.4",
+    "pg": "^8.23.0"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.23.1",
+    "drizzle-kit": "^1.0.0-rc.4",
+    "tsx": "^4.23.15"
+  }
 }
